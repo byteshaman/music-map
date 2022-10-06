@@ -537,6 +537,15 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/erkin-koray/elektronik-turkuler/',
     linkTarget: '_blank'
   },
+  // TURKMENISTAN
+  TM: {
+    artist: 'Gunesh',
+    album: 'Gunesh',
+    year: 1980,
+    genres: 'Jazz Fusion',
+    link: 'https://rateyourmusic.com/release/album/%D0%B3%D1%83%D0%BD%D0%B5%D1%88/%D0%B3%D1%83%D0%BD%D0%B5%D1%88-gunesh/',
+    linkTarget: '_blank'
+  },
   // UZBEKISTAN
   UZ: {
     artist: 'From.uz',
@@ -661,6 +670,15 @@ export const countryList = {
     year: 2009,
     genres: 'Melodic Death Metal, Progressive Metal',
     link: 'https://rateyourmusic.com/release/album/persefone/shin_ken/',
+    linkTarget: '_blank'
+  },
+  // ARMENIA
+  AM: {
+    artist: 'Tigran Hamasyan',
+    album: 'Red Hail',
+    year: 2009,
+    genres: 'Armenian Folk Music, Avant-garde Jazz',
+    link: 'https://rateyourmusic.com/release/album/tigran-hamasyan/red-hail/',
     linkTarget: '_blank'
   },
   // AUSTRIA
@@ -962,11 +980,11 @@ export const countryList = {
   },
   // SERBIA
   RS: {
-    artist: 'Mimi Mercedez',
-    album: 'Našminkam Se I Pravim Haos',
-    year: 2016,
-    genres: 'Hip-Hop, Trap',
-    link: 'https://rateyourmusic.com/release/album/mimi-mercedez/nasminkam-se-i-pravim-haos/',
+    artist: 'Darkwood Dub',
+    album: 'Elektro Pionir',
+    year: 1999,
+    genres: 'Dub, Art Rock',
+    link: 'https://rateyourmusic.com/release/album/darkwood-dub/elektro-pionir/',
     linkTarget: '_blank'
   },
   // SLOVAKIA
