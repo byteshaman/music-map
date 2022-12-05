@@ -174,6 +174,15 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/extra_golden/hera_ma_nono/',
     linkTarget: '_blank'
   },
+  // LESOTHO
+  LS: {
+    artist: 'Tau ea Matsekha',
+    album: 'Ke Satla Bua',
+    year: 2009,
+    genres: 'Famo, Sotho-Tswana Folk Music',
+    link: 'https://rateyourmusic.com/release/album/tau-ea-matsekha/ke-satla-bua/',
+    linkTarget: '_blank'
+  },
   // LIBERIA
   LR: {
     artist: 'Kapingbdi',
@@ -226,6 +235,15 @@ export const countryList = {
     year: 2014,
     genres: 'Moorish Music, Tuareg Music',
     link: 'https://rateyourmusic.com/release/album/noura_mint_seymali/tzenni/',
+    linkTarget: '_blank'
+  },
+  // MAURITIUS
+  MU: {
+    artist: 'Kaya',
+    album: 'Zistwar Revoltan',
+    year: 2010,
+    genres: 'Seggae',
+    link: 'https://rateyourmusic.com/release/album/kaya/zistwar-revoltan/',
     linkTarget: '_blank'
   },
   // MOROCCO
@@ -640,6 +658,15 @@ export const countryList = {
     year: 2008,
     genres: 'Freak Folk, Goombay, Junkanoo',
     link: 'https://rateyourmusic.com/release/album/exuma/exuma/',
+    linkTarget: '_blank'
+  },
+  // COSTA RICA 
+  CR: {
+    artist: 'Wings Of Destiny',
+    album: 'Kings Of Terror',
+    year: 2016,
+    genres: 'Power Metal, Symphonic Metal',
+    link: 'https://rateyourmusic.com/release/album/wings_of_destiny/kings_of_terror/',
     linkTarget: '_blank'
   },
   // Panama
