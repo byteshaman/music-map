@@ -163,6 +163,16 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/carl-crack/black-ark/',
     linkTarget: '_blank'
   },
+  // GABON
+  GA: {
+    artist: 'Pierre Akendengué & Hughes de Courson',
+    album: 'Lambarena: Bach To Africa',
+    region: 'Africa',
+    year: 1994,
+    genres: 'African Folk Music, Classical Crossover',
+    link: 'https://rateyourmusic.com/release/album/pierre-akendengue-hughes-de-courson/lambarena-bach-to-africa/',
+    linkTarget: '_blank'
+  },
   // GAMBIA
   GM: {
     artist: 'Amadu Bamba',
