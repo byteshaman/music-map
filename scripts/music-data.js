@@ -443,6 +443,16 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/%D7%A7%D7%95%D7%A8%D7%99%D7%9F-%D7%90%D7%9C%D7%90%D7%9C/antarctica/',
     linkTarget: '_blank'
   },
+  // UGANDA
+  UG: {
+    artist: 'Ecko Bazz',
+    album: 'Mmaso',
+    region: 'Africa',
+    year: 2022,
+    genres: 'Grime',
+    link: 'https://rateyourmusic.com/release/album/ecko-bazz/mmaso/',
+    linkTarget: '_blank'
+  },
   // WESTERN SAHARA
   EH: {
     artist: 'Group Doueh',
@@ -764,12 +774,12 @@ export const countryList = {
   //#region CENTRAL AMERICA
   // BELIZE
   BZ: {
-    artist: 'Umalali',
+    artist: 'The Garifuna Collective',
     region: 'Central America',
     album: 'Umalali',
     year: 2008,
-    genres: 'Freak Folk, Goombay, Junkanoo',
-    link: 'https://rateyourmusic.com/release/album/exuma/exuma/',
+    genres: 'Garifuna Folk Music, Punta',
+    link: 'https://rateyourmusic.com/release/album/the_garifuna_collective_f1/umalali/',
     linkTarget: '_blank'
   },
   // COSTA RICA 
@@ -782,7 +792,17 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/wings_of_destiny/kings_of_terror/',
     linkTarget: '_blank'
   },
-  // Panama
+  // NICARAGUA
+  NI: {
+    artist: 'Bwana',
+    region: 'Central America',
+    album: 'Bwana',
+    year: 1972,
+    genres: 'Guajira, Jazz-Rock, Latin Rock',
+    link: 'https://rateyourmusic.com/release/album/bwana/bwana/',
+    linkTarget: '_blank'
+  },
+  // PANAMA
   PA: {
     artist: 'Willie Colón & Rubén Blades',
     region: 'Central America',
