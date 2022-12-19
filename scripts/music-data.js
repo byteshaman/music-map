@@ -206,7 +206,7 @@ export const countryList = {
   // GUINEA-BISSAU
   GW: {
     artist: 'N\'kassa Cobra',
-    album: 'Unidade luta progresso',
+    album: 'Unidade Luta Progresso',
     region: 'Africa',
     year: 1983,
     genres: 'Gumbe',
@@ -496,6 +496,16 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/ali-akbar-khan/morning-and-evening-ragas/',
     linkTarget: '_blank'
   },
+  // BHUTAN
+  BT: {
+    artist: 'Sonam Dorji',
+    album: 'Music From the Mountains of Bhutan',
+    region: 'Asia',
+    year: 2014,
+    genres: 'Zhabdro Gorgom',
+    link: 'https://rateyourmusic.com/release/album/sonam-dorji/music-from-the-mountains-of-bhutan/',
+    linkTarget: '_blank'
+  },
   // CAMBODIA
   KH: {
     artist: 'Dengue Fever',
@@ -634,6 +644,16 @@ export const countryList = {
     year: 2002,
     genres: 'K-Rock, Ska',
     link: 'https://rateyourmusic.com/artist/witches-1',
+    linkTarget: '_blank'
+  },
+  // SRI LANKA
+  LK: {
+    artist: 'Mustafa Khetty & Morpheus Project',
+    album: 'Mozaick',
+    region: 'Asia',
+    year: 2021,
+    genres: 'Progressive Rock',
+    link: 'https://rateyourmusic.com/release/album/mustafa-khetty-and-the-morpheus-project/mosaick/ ',
     linkTarget: '_blank'
   },
   // TAIWAN
@@ -788,7 +808,7 @@ export const countryList = {
     region: 'Central America',
     album: 'Kings Of Terror',
     year: 2016,
-    genres: 'Power Metal, Symphonic Metal',
+    genres: 'Symphonic Power Metal',
     link: 'https://rateyourmusic.com/release/album/wings_of_destiny/kings_of_terror/',
     linkTarget: '_blank'
   },
@@ -916,6 +936,16 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/koktelsi/rsaaaj-/',
     linkTarget: '_blank'
   },
+  // CYPRUS
+  CY: {
+    artist: 'Arrayan Path',
+    album: 'IV: Stigmata',
+    region: 'Europe',
+    year: 2013,
+    genres: 'Heavy Metal, Symphonic Power Metal',
+    link: 'https://rateyourmusic.com/release/album/koktelsi/rsaaaj-/',
+    linkTarget: '_blank'
+  },
   // DENMARK
   DK: {
     artist: 'Kongehuset',
@@ -1024,6 +1054,16 @@ export const countryList = {
     year: 2008,
     genres: 'Progressive Rock',
     link: 'https://rateyourmusic.com/release/album/il-bacio-della-medusa/discesa-aglinferi-dun-giovane-amante/',
+    linkTarget: '_blank'
+  },
+  // KOSOVO
+  XK: {
+    artist: 'Popečitelji',
+    album: 'Ko Radi?',
+    region: 'Europe',
+    year: 2004,
+    genres: 'Funk Rock, Macedonian Folk Music, Math Rock',
+    link: 'https://rateyourmusic.com/release/album/popecitelji/ko-radi/',
     linkTarget: '_blank'
   },
   // LATVIA
@@ -1138,12 +1178,12 @@ export const countryList = {
   },
   // PORTUGAL
   PT: {
-    artist: 'Moonspell',
-    album: 'Wolfheart',
+    artist: 'Fatigado',
+    album: 'Sanzala',
     region: 'Europe',
-    year: 1995,
-    genres: 'Gothic Metal',
-    link: 'https://rateyourmusic.com/release/album/moonspell/wolfheart/',
+    year: 2017,
+    genres: 'Afro House, Batida, Kizomba, Kuduro',
+    link: 'https://rateyourmusic.com/release/album/fatigado/sanzala/',
     linkTarget: '_blank'
   },
   // ROMANIA
@@ -1332,13 +1372,23 @@ export const countryList = {
   //#endregion MIDDLE EAST
 
   //#region NORTH AMERICA
+  // BERMUDA
+  BM: {
+    artist: 'Alan Silva and his Celestrial Communication Orchestra',
+    album: 'Luna Surface',
+    region: 'North America',
+    year: 1969,
+    genres: 'Free Jazz',
+    link: 'https://rateyourmusic.com/release/album/alan-silva-and-his-celestrial-communication-orchestra/luna-surface/',
+    linkTarget: '_blank'
+  },
   // CANADA
   CA: {
     artist: 'Venetian Snares',
     album: 'Rossz Csillag Alatt Született',
     region: 'North America',
     year: 2005,
-    genres: 'Breakcore, Drill & Bass',
+    genres: 'Breakcore, Modern Classical',
     link: 'https://rateyourmusic.com/release/album/venetian-snares/rossz-csillag-alatt-szuletett/',
     linkTarget: '_blank'
   },
