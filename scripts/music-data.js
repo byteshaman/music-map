@@ -363,6 +363,16 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/fela-ransome-kuti-and-the-africa-70/confusion/',
     linkTarget: '_blank'
   },
+  // RWANDA
+  RW: {
+    artist: 'The Good Ones',
+    album: 'Rwanda, You Should Be Loved',
+    region: 'Africa',
+    year: 2019,
+    genres: 'African Folk Music, Contemporary Folk',
+    link: 'https://rateyourmusic.com/release/album/the-good-ones/rwanda-you-should-be-loved/',
+    linkTarget: '_blank'
+  },
   // SENEGAL
   SN: {
     artist: 'Youssou N\'Dour',
@@ -486,6 +496,16 @@ export const countryList = {
   //#endregion AFRICA
 
   //#region ASIA
+  // AFGHANISTAN
+  AF: {
+    artist: 'Almach',
+    album: 'Battle Of Tours',
+    region: 'Asia',
+    year: 2020,
+    genres: 'Atmospheric Black Metal',
+    link: 'https://rateyourmusic.com/release/album/ali-akbar-khan/morning-and-evening-ragas/',
+    linkTarget: '_blank'
+  },
   // BANGLADESH
   BD: {
     artist: 'Ali Akbar Khan',
@@ -812,6 +832,26 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/wings_of_destiny/kings_of_terror/',
     linkTarget: '_blank'
   },
+  // GUATEMALA
+  GT: {
+    artist: 'Asimov',
+    region: 'Central America',
+    album: 'Todo Lo Que Buscamos Es Desaparecer',
+    year: 2019,
+    genres: 'Dream Pop, Shoegaze',
+    link: 'https://rateyourmusic.com/release/album/asimov/todo-lo-que-buscamos-es-desaparecer/',
+    linkTarget: '_blank'
+  },
+  // HONDURAS
+  // HN: {
+  //   artist: 'Wings Of Destiny',
+  //   region: 'Central America',
+  //   album: 'Kings Of Terror',
+  //   year: 2016,
+  //   genres: 'Power Metal, Symphonic Metal',
+  //   link: 'https://rateyourmusic.com/release/album/wings_of_destiny/kings_of_terror/',
+  //   linkTarget: '_blank'
+  // },
   // NICARAGUA
   NI: {
     artist: 'Bwana',
@@ -1445,6 +1485,16 @@ export const countryList = {
     link: 'https://rateyourmusic.com/release/album/dead-can-dance/dionysus/',
     linkTarget: '_blank'
   },
+  // FIJI
+  FJ: {
+    artist: 'Mantis',
+    album: 'Turn Onto Music',
+    region: 'Oceania',
+    year: 1973,
+    genres: 'Funk Rock,	Psychedelic Rock',
+    link: 'https://rateyourmusic.com/release/album/mantis/turn-onto-music/',
+    linkTarget: '_blank'
+  },
   // NEW ZEALAND
   NZ: {
     artist: 'David Parsons',
@@ -1520,12 +1570,12 @@ export const countryList = {
   },
   // COLOMBIA
   CO: {
-    artist: 'HeadCrusher',
-    album: 'Let The Blood Run',
+    artist: 'Quantic & His Combo Bárbaro',
+    album: 'Tradition in Transition',
     region: 'South America',
-    year: 2012,
-    genres: 'Death Metal',
-    link: 'https://rateyourmusic.com/release/album/headcrusher/let_the_blood_run/',
+    year: 2009,
+    genres: 'Latin Jazz, Mambo, Salsa',
+    link: 'https://rateyourmusic.com/release/album/quantic-and-his-combo-barbaro/tradition-in-transition/',
     linkTarget: '_blank'
   },
   // ECUADOR
