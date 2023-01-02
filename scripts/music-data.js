@@ -843,15 +843,15 @@ export const countryList = {
     linkTarget: '_blank'
   },
   // HONDURAS
-  // HN: {
-  //   artist: 'Wings Of Destiny',
-  //   region: 'Central America',
-  //   album: 'Kings Of Terror',
-  //   year: 2016,
-  //   genres: 'Power Metal, Symphonic Metal',
-  //   link: 'https://rateyourmusic.com/release/album/wings_of_destiny/kings_of_terror/',
-  //   linkTarget: '_blank'
-  // },
+  HN: {
+    artist: 'Guayo Cedeño',
+    region: 'Central America',
+    album: 'Coco Bar',
+    year: 2017,
+    genres: 'Caribbean Music, Surf Rock',
+    link: 'https://rateyourmusic.com/release/album/guayo-cedeno/coco-bar/',
+    linkTarget: '_blank'
+  },
   // NICARAGUA
   NI: {
     artist: 'Bwana',
