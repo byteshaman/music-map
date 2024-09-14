@@ -6,7 +6,6 @@ import am5geodata_worldHigh from "@amcharts/amcharts5-geodata/worldHigh";
 import am5geodata_usaHigh from "@amcharts/amcharts5-geodata/usaHigh";
 import am5geodata_italyHigh from "@amcharts/amcharts5-geodata/italyHigh";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import am5themes_Micro from "@amcharts/amcharts5/themes/Micro";
 import countries from "@amcharts/amcharts5-geodata/data/countries2";
 
 import { albumXcountry } from 'src/data/countryxalbum.data';
@@ -29,20 +28,22 @@ export class AppComponent {
   mapConfig!: am5map.IMapChartSettings
   colors: any = {};
 
-  htmlTooltip: string = '';
+  minZoom: number = 1;
+  maxZoom: number = 32;
+
+  playedTooltip: string = '';
+  notPlayedTooltip: string = '';
   constructor(private http: HttpClient) { }
 
 
   async ngOnInit() {
-    this.htmlTooltip = await firstValueFrom(this.http.get('assets/tooltip.html', { responseType: 'text' }));
+    this.playedTooltip = await firstValueFrom(this.http.get('assets/played-tooltip.html', { responseType: 'text' }));
+    this.notPlayedTooltip = await firstValueFrom(this.http.get('assets/not-played-tooltip.html', { responseType: 'text' }));
 
     // root-init
     this.root = am5.Root.new("map"); // pass id of the <div> container
     this.root.numberFormatter.set("numberFormat", "#"); // do not add , to thousands
-    this.root.setThemes([
-      am5themes_Animated.new(this.root),
-      am5themes_Micro.new(this.root)
-    ]);
+    // this.root.setThemes([am5themes_Animated.new(this.root)]);
 
     this.setMapConfig();
     
@@ -64,6 +65,7 @@ export class AppComponent {
     this.worldSeries = this.chart.series.push(
       am5map.MapPolygonSeries.new(this.root, {
         geoJSON: am5geodata_worldHigh,
+        exclude: ["AQ"]
       })
     );
 
@@ -92,6 +94,11 @@ export class AppComponent {
     return am5.color(getComputedStyle(document.documentElement).getPropertyValue(propertyName) || '#ff0000');
   }
 
+  getColorByYear(year: number, minYear: number, maxYear: number): am5.Color {
+    const normalizedYear = (year - minYear) / (maxYear - minYear);
+    return am5.Color.interpolate(normalizedYear, this.getColor('--min-year-color'), this.getColor('--max-year-color'));
+  }
+
   setChartBg(): void {
     /// Main bg
     this.chart.chartContainer.set("background", am5.Rectangle.new(this.root, {
@@ -113,25 +120,46 @@ export class AppComponent {
       geometry: am5map.getGeoRectangle(90, 180, -90, -180)
     });
 
-    this.allSeries.forEach(series => {series.mapPolygons.template.states.create("hover", {
-        fill: this.getColor('--hover-color'),
-      });
-    });
+    // hover-color set in setSeriesConfig
   }
 
   setSeriesConfig(): void {
+    const minYear = Math.min(...albumXcountry.map(el => el.year));
+    const maxYear = Math.max(...albumXcountry.map(el => el.year));
+
+
     this.allSeries.forEach(series => {
-      // Set HTML popup
-      series.mapPolygons.template.setAll({
-        tooltipHTML: this.htmlTooltip,
-        interactive: true,
-      })
+      // Set tooltip
+      series.mapPolygons.template.set("tooltipHTML", "{tooltipContent}");
+
+      series.mapPolygons.template.adapters.add("tooltipHTML", (text, target) => {
+        const dataContext = target.dataItem?.dataContext as any;
+        return dataContext.year ? this.playedTooltip : this.notPlayedTooltip;
+      });
 
       //dbg log item on hover to inspect properties
-      series.mapPolygons.template.events.on("pointerover", (event) => {
-        let dataItem = event.target.dataItem;
-        if (dataItem) {
-          console.log(dataItem.dataContext);
+      // series.mapPolygons.template.events.on("pointerover", (event) => {
+      //   let dataItem = event.target.dataItem;
+      //   if (dataItem) {
+      //     console.log(dataItem.dataContext);
+      //   }
+      // });
+
+      // Set fill color based on year
+      series.mapPolygons.template.adapters.add("fill", (fill, target) => {
+        const dataItem = target.dataItem;
+        if (dataItem?.dataContext) {
+          const year = (dataItem.dataContext as any).year;
+          return year ? this.getColorByYear(year, minYear, maxYear) : this.getColor('--not-listened-color');
+        }
+        return fill;
+      });
+
+      // onClick -> open rym page
+      series.mapPolygons.template.events.on("click", (event) => {
+        let url = (event.target.dataItem!.dataContext as any).url;
+        if (url) {
+          window.open(url, "/blank");
         }
       });
     })
@@ -161,14 +189,14 @@ export class AppComponent {
 
   setMapConfig(): void {
     this.mapConfig = {
-      projection: am5map.geoOrthographic(), // Globe projection
+      projection: am5map.geoOrthographic(), // Globe projection (default is am5map.geoMercator())
       panX: "rotateX",
       panY: "rotateY",
 
       /// zoom settings
       zoomControl: am5map.ZoomControl.new(this.root, {}), // Add zoom control
-      minZoomLevel: 0.1,
-      maxZoomLevel: 32
+      minZoomLevel: this.minZoom,
+      maxZoomLevel: this.maxZoom
     }
   }
 }

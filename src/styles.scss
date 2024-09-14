@@ -14,16 +14,23 @@ body {
   --sea-color: #79bcff;
   --font-size: 11px;
   --icon-size: 12px;
-  --hover-color: #6c74dc;
+  --not-listened-color: #fff4df;
+  --min-year-color: #ffcd90;
+  --max-year-color: #ff7b00;
+  --tooltip-max-width: 250px;
+  --tooltip-min-width: 100px;
+
 }
 
 .tooltip {
-  color: white;
+  color: #780116;
   display: flex;
   flex-direction: column;
   font-size: var(--font-size);
-  max-width: 200px;
-  min-width: 100px;
+
+  
+  max-width: var(--tooltip-max-width);
+  min-width: var(--tooltip-min-width);
 
   h3 {
     padding: 0;
@@ -51,9 +58,4 @@ body {
 
 .left {
   text-align: left;
-}
-
-.am5-tooltip {
-  background-color: #ffcc00 !important;  /* Tooltip background color */
-  color: #000 !important;                /* Tooltip text color */
 }
