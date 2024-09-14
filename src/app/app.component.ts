@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import * as am5 from "@amcharts/amcharts5";
 import * as am5map from "@amcharts/amcharts5/map";
 import am5geodata_worldHigh from "@amcharts/amcharts5-geodata/worldHigh";
@@ -8,7 +9,7 @@ import countries from "@amcharts/amcharts5-geodata/data/countries2";
 
 import { colors } from 'src/data/colors.data';
 import { albumXcountry } from 'src/data/countryxalbum.data';
-
+import { firstValueFrom } from 'rxjs';
 
 
 @Component({
@@ -19,31 +20,38 @@ import { albumXcountry } from 'src/data/countryxalbum.data';
 export class AppComponent {
   title = 'music-map';
   root!: am5.Root;
-  chart!: am5map.MapChart;
   colors: any = {};
 
-  ngOnInit() {
-    this.initializeColors(); 
+  htmlTooltip: string = '';
+  constructor(private http: HttpClient) { }
 
-    // Initialize the root
-    this.root = am5.Root.new("map");
+  async ngOnInit() {
+    this.initializeColors();
 
-    // Disable thousand separator for all numbers
-    this.root.numberFormatter.set("numberFormat", "#");
+    this.htmlTooltip = await firstValueFrom(this.http.get('assets/tooltip.html', { responseType: 'text' }));
 
-    // Set various properties
-    let chart = this.root.container.children.push(
-      am5map.MapChart.new(this.root, {
-        projection: am5map.geoOrthographic(), // Globe projection
-        panX: "rotateX", // Allow horizontal panning
-        panY: "rotateY", // Allow vertical panning
-        
-        /// zoom settings
-        zoomControl: am5map.ZoomControl.new(this.root, {}), // Add zoom control
-        minZoomLevel: 0.1,
-        maxZoomLevel: 32
-      })
-    );
+    // root-init
+    this.root = am5.Root.new("map"); // pass id of the <div> container
+    this.root.numberFormatter.set("numberFormat", "#"); // do not add , to thousands
+
+
+    // MARK: map-init
+    const mapConfig: am5map.IMapChartSettings = {
+      projection: am5map.geoOrthographic(), // Globe projection
+      panX: "rotateX",
+      panY: "rotateY",
+
+      /// zoom settings
+      zoomControl: am5map.ZoomControl.new(this.root, {}), // Add zoom control
+      minZoomLevel: 0.1,
+      maxZoomLevel: 32
+    }
+
+    const mapChart: am5map.MapChart = am5map.MapChart.new(this.root, mapConfig)
+
+    let chart = this.root.container.children.push(mapChart); // Make map visible
+
+    //todo: understand how bg works
 
 
     //#region bg colors
@@ -93,7 +101,7 @@ export class AppComponent {
 
     // Must be the last operation performed
     // this.setPolygonSeriesData([polygonSeriesUSA, polygonSeriesWorld, polygonSeriesItaly]);
-    this.setPolygonSeriesData([polygonSeriesWorld]);
+    this.setData([polygonSeriesWorld]);
 
   }
 
@@ -105,18 +113,19 @@ export class AppComponent {
     Object.entries(colors).forEach(([key, cssVar]) => {
       this.colors[key] = getComputedStyle(document.documentElement)
         .getPropertyValue(cssVar).trim()
-      })
+    })
     // console.log(this.colors)
   }
 
   setPolygonSeriesProperties(polygonSeries: am5map.MapPolygonSeries[]): void {
     polygonSeries.forEach(series => {
-      
+
       // Set HTML popup
       series.mapPolygons.template.setAll({
-        tooltipHTML: "<div><p>Country: {name}</p><p>Album: {album}</p></div>",
+        tooltipHTML: this.htmlTooltip,
         interactive: true,
       })
+
 
       //dbg log item on hover to inspect properties
       series.mapPolygons.template.events.on("pointerover", (event) => {
@@ -126,22 +135,23 @@ export class AppComponent {
         }
       });
 
-      // Set color on hover
-      series.mapPolygons.template.states.create("hover", {
-        fill: am5.color(0x677935)
-      });
+      // MARK: hover-color
+      // series.mapPolygons.template.states.create("hover", {
+      //   fill: am5.color(0x677935)
+      // });
     })
   }
 
-  
+
   /**
    * Set data for tooltip
    * @param  {am5map.MapPolygonSeries[]} polygonSeries
    * @returns void
    */
-  setPolygonSeriesData(polygonSeries: am5map.MapPolygonSeries[]): void {
+  setData(polygonSeries: am5map.MapPolygonSeries[]): void {
     polygonSeries.forEach(series => {
       series.data.setAll(
+        // MARK: tooltip-data
         albumXcountry.map(el => {
           return {
             album: el.album,
