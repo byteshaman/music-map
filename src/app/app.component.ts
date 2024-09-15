@@ -5,10 +5,8 @@ import * as am5map from "@amcharts/amcharts5/map";
 import am5geodata_worldHigh from "@amcharts/amcharts5-geodata/worldHigh";
 import am5geodata_usaHigh from "@amcharts/amcharts5-geodata/usaHigh";
 import am5geodata_italyHigh from "@amcharts/amcharts5-geodata/italyHigh";
-import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import countries from "@amcharts/amcharts5-geodata/data/countries2";
 
-import { albumXcountry } from 'src/data/countryxalbum.data';
+import { AlbumInfo, albums } from 'src/data/albums.data';
 import { firstValueFrom } from 'rxjs';
 
 
@@ -17,6 +15,7 @@ import { firstValueFrom } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'music-map';
   worldSeries!: am5map.MapPolygonSeries;
@@ -30,6 +29,7 @@ export class AppComponent {
 
   minZoom: number = 1;
   maxZoom: number = 32;
+  splitUSA: boolean = false;
 
   playedTooltip: string = '';
   notPlayedTooltip: string = '';
@@ -54,6 +54,7 @@ export class AppComponent {
     this.setChartBg();
     this.setSeriesConfig();
     this.setSeriesData(); // Must be the last operation performed
+    this.toggleUSAView();
   }
 
   /**
@@ -61,6 +62,7 @@ export class AppComponent {
    * @returns void
    */
   createPolygonSeries(): void {
+
 
     this.worldSeries = this.chart.series.push(
       am5map.MapPolygonSeries.new(this.root, {
@@ -75,14 +77,14 @@ export class AppComponent {
       })
     );
 
-    this.itSeries = this.chart.series.push(
-      am5map.MapPolygonSeries.new(this.root, {
-        geoJSON: am5geodata_italyHigh,
-      })
-    );
+    // this.itSeries = this.chart.series.push(
+    //   am5map.MapPolygonSeries.new(this.root, {
+    //     geoJSON: am5geodata_italyHigh,
+    //   })
+    // );
 
 
-    this.allSeries.push(this.worldSeries)
+    this.allSeries.push(this.worldSeries, this.usSeries)
   }
 
   /**
@@ -99,6 +101,10 @@ export class AppComponent {
     return am5.Color.interpolate(normalizedYear, this.getColor('--min-year-color'), this.getColor('--max-year-color'));
   }
 
+  /**
+   * Set backgrounds
+   * @returns void
+   */
   setChartBg(): void {
     /// Main bg
     this.chart.chartContainer.set("background", am5.Rectangle.new(this.root, {
@@ -120,18 +126,27 @@ export class AppComponent {
       geometry: am5map.getGeoRectangle(90, 180, -90, -180)
     });
 
-    // hover-color set in setSeriesConfig
+    //! hover-color set in setSeriesConfig
   }
 
+  /**
+   * Set common config for all series
+   * @returns void
+   */
   setSeriesConfig(): void {
-    const minYear = Math.min(...albumXcountry.map(el => el.year));
-    const maxYear = Math.max(...albumXcountry.map(el => el.year));
+    const minYear = Math.min(...albums.map(el => el.year));
+    const maxYear = Math.max(...albums.map(el => el.year));
 
 
     this.allSeries.forEach(series => {
-      // Set tooltip
-      series.mapPolygons.template.set("tooltipHTML", "{tooltipContent}");
+      series.mapPolygons.template.setAll({
+        tooltipHTML: "{tooltipContent}",
+        // Border
+        stroke: this.getColor('--nation-border-color'), 
+        strokeWidth: .23,
+      });
 
+      // Dynamic tooltip
       series.mapPolygons.template.adapters.add("tooltipHTML", (text, target) => {
         const dataContext = target.dataItem?.dataContext as any;
         return dataContext.year ? this.playedTooltip : this.notPlayedTooltip;
@@ -173,20 +188,24 @@ export class AppComponent {
     this.allSeries.forEach(series => {
       series.data.setAll(
         // MARK: tooltip-data
-        albumXcountry.map(el => {
+        albums.map(el => {
           return {
             album: el.album,
             artist: el.artist,
             genres: el.genres,
-            id: el.code,
+            id: el.id,
             year: el.year,
-            url: el.link
+            url: el.url
           }
         })
       )
     })
   }
 
+  /**
+   * Set map chart settings
+   * @returns void
+   */
   setMapConfig(): void {
     this.mapConfig = {
       projection: am5map.geoOrthographic(), // Globe projection (default is am5map.geoMercator())
@@ -198,5 +217,24 @@ export class AppComponent {
       minZoomLevel: this.minZoom,
       maxZoomLevel: this.maxZoom
     }
+  }
+
+  /**
+   * Determine how USA should be displayed
+   * @returns void
+   */
+  toggleUSAView(): void {
+    this.splitUSA ? this.usSeries.show() : this.usSeries.hide();
+
+    // Hide worldSeries' US polygons when needed
+    this.worldSeries.mapPolygons.each((polygon) => {
+      const countryCode = (polygon.dataItem?.dataContext as AlbumInfo).id;
+
+      if (countryCode === 'US') {
+        this.splitUSA ? polygon.hide() : polygon.show();
+      }
+    });
+
+    this.splitUSA = !this.splitUSA;
   }
 }

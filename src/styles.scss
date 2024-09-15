@@ -10,20 +10,24 @@ body {
 }
 
 :root {
-  --bg-color: #333;
-  --sea-color: #79bcff;
-  --font-size: 11px;
-  --icon-size: 12px;
+  // Colors
+  --bg-color: #121212;
+  --sea-color: #6495ed;
   --not-listened-color: #fff4df;
   --min-year-color: #ffcd90;
   --max-year-color: #ff7b00;
+  --tooltip-text-color: #780116;
+  --nation-border-color: #540b0e;
+
+  // Sizes
   --tooltip-max-width: 250px;
   --tooltip-min-width: 100px;
-
+  --font-size: 11px;
+  --icon-size: 12px;
 }
 
 .tooltip {
-  color: #780116;
+  color: var(--tooltip-text-color);
   display: flex;
   flex-direction: column;
   font-size: var(--font-size);
