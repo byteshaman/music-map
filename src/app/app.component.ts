@@ -29,7 +29,7 @@ export class AppComponent {
 
   minZoom: number = 1;
   maxZoom: number = 32;
-  splitUSA: boolean = false;
+  showExtraRegions: boolean = false;
 
   playedTooltip: string = '';
   notPlayedTooltip: string = '';
@@ -53,8 +53,9 @@ export class AppComponent {
     this.createPolygonSeries();
     this.setChartBg();
     this.setSeriesConfig();
+
+    this.toggleSubstatesView();
     this.setSeriesData(); // Must be the last operation performed
-    this.toggleUSAView();
   }
 
   /**
@@ -67,7 +68,7 @@ export class AppComponent {
     this.worldSeries = this.chart.series.push(
       am5map.MapPolygonSeries.new(this.root, {
         geoJSON: am5geodata_worldHigh,
-        exclude: ["AQ"]
+        exclude: ["AQ",]
       })
     );
 
@@ -77,14 +78,15 @@ export class AppComponent {
       })
     );
 
-    // this.itSeries = this.chart.series.push(
-    //   am5map.MapPolygonSeries.new(this.root, {
-    //     geoJSON: am5geodata_italyHigh,
-    //   })
-    // );
+    this.itSeries = this.chart.series.push(
+      am5map.MapPolygonSeries.new(this.root, {
+        geoJSON: am5geodata_italyHigh,
+        exclude: ["FR-H"] // Remove Corse
+      })
+    );
 
 
-    this.allSeries.push(this.worldSeries, this.usSeries)
+    this.allSeries.push(this.worldSeries, this.usSeries, this.itSeries)
   }
 
   /**
@@ -98,7 +100,7 @@ export class AppComponent {
 
   getColorByYear(year: number, minYear: number, maxYear: number): am5.Color {
     const normalizedYear = (year - minYear) / (maxYear - minYear);
-    return am5.Color.interpolate(normalizedYear, this.getColor('--min-year-color'), this.getColor('--max-year-color'));
+    return am5.Color.interpolate(normalizedYear, this.getColor('--min-year-color'), this.getColor('--max-year-color'), 'hsl');
   }
 
   /**
@@ -223,18 +225,23 @@ export class AppComponent {
    * Determine how USA should be displayed
    * @returns void
    */
-  toggleUSAView(): void {
-    this.splitUSA ? this.usSeries.show() : this.usSeries.hide();
+  toggleSubstatesView(): void {
+    if (this.showExtraRegions) {
+      this.itSeries.show();
+      this.usSeries.show();
+    } else {
+      this.itSeries.hide();
+      this.usSeries.hide();
+    } 
 
-    // Hide worldSeries' US polygons when needed
+    // Hide worldSeries' countries polygons when needed
     this.worldSeries.mapPolygons.each((polygon) => {
       const countryCode = (polygon.dataItem?.dataContext as AlbumInfo).id;
-
-      if (countryCode === 'US') {
-        this.splitUSA ? polygon.hide() : polygon.show();
+      if (['IT', 'US'].includes(countryCode)) {
+        this.showExtraRegions ? polygon.hide() : polygon.show();
       }
     });
 
-    this.splitUSA = !this.splitUSA;
+    this.showExtraRegions = !this.showExtraRegions;
   }
 }

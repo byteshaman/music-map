@@ -2,4 +2,5 @@
 
 </div>
 
-<button (click)="toggleUSAView()">{{ !splitUSA ? 'Show USA as single country' : 'Show USA states' }}</button>
+
+<button (click)="toggleSubstatesView()">{{ (showExtraRegions ? 'Show' : 'Hide') +' Extra Regions' }}</button>
