@@ -1,19 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatIconModule } from '@angular/material/icon';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+/// Material
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+/// Components
+import { AppComponent } from './app.component';
+import { AlbumTableComponent } from 'src/components/album-table/album-table.component';
+import { MatButtonModule } from '@angular/material/button';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlbumTableComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, 
+    BrowserAnimationsModule,
+    HttpClientModule,
     MatIconModule,
-    BrowserAnimationsModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatSortModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

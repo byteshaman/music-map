@@ -1,6 +1,7 @@
-<div id="map" style="width: 100%; height: 500px;">
-
+<div id="map-container">
+  <div id="map"></div>
+  <button mat-raised-button color="primary"(click)="toggleSubstatesView()">{{ (showExtraRegions ? 'Hide' : 'Show') +' Extra Regions' }}</button>
 </div>
 
 
-<button (click)="toggleSubstatesView()">{{ (showExtraRegions ? 'Show' : 'Hide') +' Extra Regions' }}</button>
+<app-album-table></app-album-table>

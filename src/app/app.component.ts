@@ -33,14 +33,20 @@ export class AppComponent {
 
   playedTooltip: string = '';
   notPlayedTooltip: string = '';
-  constructor(private http: HttpClient) { }
-
+  
+  constructor(private http: HttpClient) {
+    // Load showExtraRegions state from localStorage
+    const savedState = localStorage.getItem('showExtraRegions');
+    if (savedState !== null) {
+      this.showExtraRegions = JSON.parse(savedState);
+    } 
+  }
 
   async ngOnInit() {
     this.playedTooltip = await firstValueFrom(this.http.get('assets/played-tooltip.html', { responseType: 'text' }));
     this.notPlayedTooltip = await firstValueFrom(this.http.get('assets/not-played-tooltip.html', { responseType: 'text' }));
 
-    // root-init
+    // MARK: root-init
     this.root = am5.Root.new("map"); // pass id of the <div> container
     this.root.numberFormatter.set("numberFormat", "#"); // do not add , to thousands
     // this.root.setThemes([am5themes_Animated.new(this.root)]);
@@ -54,7 +60,7 @@ export class AppComponent {
     this.setChartBg();
     this.setSeriesConfig();
 
-    this.toggleSubstatesView();
+    this.applyExtraRegionsState();
     this.setSeriesData(); // Must be the last operation performed
   }
 
@@ -63,8 +69,6 @@ export class AppComponent {
    * @returns void
    */
   createPolygonSeries(): void {
-
-
     this.worldSeries = this.chart.series.push(
       am5map.MapPolygonSeries.new(this.root, {
         geoJSON: am5geodata_worldHigh,
@@ -108,13 +112,13 @@ export class AppComponent {
    * @returns void
    */
   setChartBg(): void {
-    /// Main bg
+    // Main bg
     this.chart.chartContainer.set("background", am5.Rectangle.new(this.root, {
-      fill: this.getColor('--bg-color'),
+      fill: this.getColor('--chart-bg-color'),
       fillOpacity: 0.9
     }));
 
-    /// Sea bg
+    // Sea bg
     let backgroundSeries = this.chart.series.unshift(
       am5map.MapPolygonSeries.new(this.root, {})
     );
@@ -129,6 +133,29 @@ export class AppComponent {
     });
 
     //! hover-color set in setSeriesConfig
+  }
+
+
+  /**
+   * MARK: map-cfg
+   * Set map chart settings
+   * @returns void
+   */
+  setMapConfig(): void {
+    this.mapConfig = {
+      projection: am5map.geoOrthographic(), // Globe projection (default is am5map.geoMercator())
+      panX: "rotateX",
+      panY: "rotateY",
+
+      /// zoom settings
+      zoomControl: am5map.ZoomControl.new(this.root, {}), // Add zoom control
+      minZoomLevel: this.minZoom,
+      maxZoomLevel: this.maxZoom,
+
+      // initial position
+      rotationX: -10, // longitude
+      rotationY: -40, // latitude
+    }
   }
 
   /**
@@ -150,7 +177,7 @@ export class AppComponent {
 
       // Dynamic tooltip
       series.mapPolygons.template.adapters.add("tooltipHTML", (text, target) => {
-        const dataContext = target.dataItem?.dataContext as any;
+        const dataContext = target.dataItem?.dataContext as AlbumInfo;
         return dataContext.year ? this.playedTooltip : this.notPlayedTooltip;
       });
 
@@ -166,7 +193,7 @@ export class AppComponent {
       series.mapPolygons.template.adapters.add("fill", (fill, target) => {
         const dataItem = target.dataItem;
         if (dataItem?.dataContext) {
-          const year = (dataItem.dataContext as any).year;
+          const year = (dataItem.dataContext as AlbumInfo).year;
           return year ? this.getColorByYear(year, minYear, maxYear) : this.getColor('--not-listened-color');
         }
         return fill;
@@ -174,7 +201,7 @@ export class AppComponent {
 
       // onClick -> open rym page
       series.mapPolygons.template.events.on("click", (event) => {
-        let url = (event.target.dataItem!.dataContext as any).url;
+        let url = (event.target.dataItem!.dataContext as AlbumInfo).url;
         if (url) {
           window.open(url, "/blank");
         }
@@ -204,28 +231,22 @@ export class AppComponent {
     })
   }
 
+
   /**
-   * Set map chart settings
+   * Toggle showExtraRegions and save it on localStorage
    * @returns void
    */
-  setMapConfig(): void {
-    this.mapConfig = {
-      projection: am5map.geoOrthographic(), // Globe projection (default is am5map.geoMercator())
-      panX: "rotateX",
-      panY: "rotateY",
-
-      /// zoom settings
-      zoomControl: am5map.ZoomControl.new(this.root, {}), // Add zoom control
-      minZoomLevel: this.minZoom,
-      maxZoomLevel: this.maxZoom
-    }
+  toggleSubstatesView(): void {
+    this.showExtraRegions = !this.showExtraRegions;
+    localStorage.setItem('showExtraRegions', JSON.stringify(this.showExtraRegions));
+    this.applyExtraRegionsState();
   }
 
   /**
    * Determine how USA should be displayed
    * @returns void
    */
-  toggleSubstatesView(): void {
+  applyExtraRegionsState(): void {
     if (this.showExtraRegions) {
       this.itSeries.show();
       this.usSeries.show();
@@ -241,7 +262,5 @@ export class AppComponent {
         this.showExtraRegions ? polygon.hide() : polygon.show();
       }
     });
-
-    this.showExtraRegions = !this.showExtraRegions;
   }
 }

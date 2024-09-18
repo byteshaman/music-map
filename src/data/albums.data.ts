@@ -5,6 +5,7 @@ export interface AlbumInfo {
   artist: string,
   album: string,
   group: string,
+  name?: string,
   year: number,
   genres: string,
   url: string,
@@ -15,6 +16,7 @@ export const albums: AlbumInfo[] = [
   // ALGERIA
   {
     id: 'DZ',
+    name: 'Algeria',
     artist: 'Khaled',
     album: 'Khaled',
     group: 'Africa',
@@ -25,16 +27,18 @@ export const albums: AlbumInfo[] = [
   // ANGOLA
   {
     id: 'AO',
+    name: 'Angola',
     artist: 'Bonga',
     album: 'Angola 74',
     group: 'Africa',
     year: 1974,
     genres: 'Morna, Semba',
-    url: 'hhttps://rateyourmusic.com/release/album/bonga/angola-74/'
+    url: 'https://rateyourmusic.com/release/album/bonga/angola-74/'
   },
   // BENIN
   {
     id: 'BJ',
+    name: 'Benin',
     artist: 'Angélique Kidjo',
     album: 'Black Ivory Soul',
     group: 'Africa',
@@ -45,6 +49,7 @@ export const albums: AlbumInfo[] = [
   // BURKINA FASO
   {
     id: 'BF',
+    name: 'Burkina Faso',
     artist: 'Cheikh Lô',
     album: 'Né La Thiass',
     group: 'Africa',
@@ -55,6 +60,7 @@ export const albums: AlbumInfo[] = [
   // BOTSWANA
   {
     id: 'BW',
+    name: 'Botswana',
     artist: 'Skinflint',
     album: 'IKLWA',
     group: 'Africa',
@@ -65,6 +71,7 @@ export const albums: AlbumInfo[] = [
   // CAMEROON
   {
     id: 'CM',
+    name: 'Cameroon',
     artist: 'Francis Bebey',
     album: 'Psychedelic Sanza 1982-1984',
     group: 'Africa',
@@ -75,6 +82,7 @@ export const albums: AlbumInfo[] = [
   // CAPE VERDE
   {
     id: 'CV',
+    name: 'Cape Verde',
     artist: 'Americo Brito',
     album: 'Sintado Na Pracinha',
     group: 'Africa',
@@ -85,6 +93,7 @@ export const albums: AlbumInfo[] = [
   // CHAD
   {
     id: 'TD',
+    name: 'Chad',
     artist: 'Maitre Gazonga',
     album: 'Les Jaloux Saboteurs',
     group: 'Africa',
@@ -95,6 +104,7 @@ export const albums: AlbumInfo[] = [
   // CONGO
   {
     id: 'CG',
+    name: 'Congo',
     artist: 'ZAO',
     album: 'Ancien Combattant',
     group: 'Africa',
@@ -105,6 +115,7 @@ export const albums: AlbumInfo[] = [
   // DEMOCRATIC REPUBLIC OF THE CONGO
   {
     id: 'CD',
+    name: 'Democratic Republic Of The Congo',
     artist: 'Franco & Le Tout Puissant OK Jazz',
     album: 'Maby… Tonton Zala Serieux',
     group: 'Africa',
@@ -115,6 +126,7 @@ export const albums: AlbumInfo[] = [
   // DJIBOUTI
   {
     id: 'DJ',
+    name: 'Djibouti',
     artist: 'Groupe RTD',
     album: 'The Dancing Devils Of Djibouti',
     group: 'Africa',
@@ -125,6 +137,7 @@ export const albums: AlbumInfo[] = [
   // EGYPT
   {
     id: 'EG',
+    name: 'Egypt',
     artist: 'Cairokee',
     album: 'The Ugly Ducklings',
     group: 'Africa',
@@ -135,6 +148,7 @@ export const albums: AlbumInfo[] = [
   // EQUATORIAL GUINEA
   {
     id: 'GQ',
+    name: 'Equatorial Guinea',
     artist: 'Lion Sitté',
     album: 'Otros Tiempos',
     group: 'Africa',
@@ -145,6 +159,7 @@ export const albums: AlbumInfo[] = [
   // ERITREA
   {
     id: 'ER',
+    name: 'Eritrea',
     artist: 'Asmara Allstars',
     album: 'Eritrea\'s Got Soul',
     group: 'Africa',
@@ -155,6 +170,7 @@ export const albums: AlbumInfo[] = [
   // ETHIOPIA
   {
     id: 'ET',
+    name: 'Ethiopia',
     artist: 'Mulatu Astatke',
     album: 'Mulatu Of Ethiopia',
     group: 'Africa',
@@ -165,6 +181,7 @@ export const albums: AlbumInfo[] = [
   // ESWATINI
   {
     id: 'SZ',
+    name: 'Eswatini',
     artist: 'Carl Crack',
     album: 'Black Ark',
     group: 'Africa',
@@ -175,6 +192,7 @@ export const albums: AlbumInfo[] = [
   // GABON
   {
     id: 'GA',
+    name: 'Gabon',
     artist: 'Pierre Akendengué & Hughes de Courson',
     album: 'Lambarena: Bach To Africa',
     group: 'Africa',
@@ -185,6 +203,7 @@ export const albums: AlbumInfo[] = [
   // GAMBIA
   {
     id: 'GM',
+    name: 'Gambia',
     artist: 'Amadu Bamba',
     album: 'Drums Of The Firdu Fula',
     group: 'Africa',
@@ -195,6 +214,7 @@ export const albums: AlbumInfo[] = [
   // GHANA
   {
     id: 'GH',
+    name: 'Ghana',
     artist: 'De Frank & His Professionals',
     album: 'Psychedelic Man',
     group: 'Africa',
@@ -205,6 +225,7 @@ export const albums: AlbumInfo[] = [
   // GUINEA
   {
     id: 'GN',
+    name: 'Guinea',
     artist: 'Djeli Moussa Diawara',
     album: 'Yasimika',
     group: 'Africa',
@@ -215,6 +236,7 @@ export const albums: AlbumInfo[] = [
   // GUINEA-BISSAU
   {
     id: 'GW',
+    name: 'Guinea-Bissau',
     artist: 'N\'kassa Cobra',
     album: 'Unidade Luta Progresso',
     group: 'Africa',
@@ -225,6 +247,7 @@ export const albums: AlbumInfo[] = [
   // IVORY COAST
   {
     id: 'CI',
+    name: 'Ivory Coast',
     artist: 'Magic System',
     album: '1er Gaou',
     group: 'Africa',
@@ -235,6 +258,7 @@ export const albums: AlbumInfo[] = [
   // KENYA
   {
     id: 'KE',
+    name: 'Kenya',
     artist: 'Extra Golden',
     album: 'Hara Ma Nono',
     group: 'Africa',
@@ -245,6 +269,7 @@ export const albums: AlbumInfo[] = [
   // LESOTHO
   {
     id: 'LS',
+    name: 'Lesotho',
     artist: 'Tau ea Matsekha',
     album: 'Ke Satla Bua',
     group: 'Africa',
@@ -255,6 +280,7 @@ export const albums: AlbumInfo[] = [
   // LIBERIA
   {
     id: 'LR',
+    name: 'Liberia',
     artist: 'Kapingbdi',
     album: 'Born In The Night',
     group: 'Africa',
@@ -265,6 +291,7 @@ export const albums: AlbumInfo[] = [
   // LIBYA
   {
     id: 'LY',
+    name: 'Libya',
     artist: 'Hamid El Shaeri',
     album: 'Raheel',
     group: 'Africa',
@@ -275,6 +302,7 @@ export const albums: AlbumInfo[] = [
   // MADAGASCAR
   {
     id: 'MG',
+    name: 'Madagascar',
     artist: 'D\'Gary',
     album: 'Malagasy Guitar: Music From Madagascar',
     group: 'Africa',
@@ -285,6 +313,7 @@ export const albums: AlbumInfo[] = [
   // MALAWI
   {
     id: 'MW',
+    name: 'Malawi',
     artist: 'Dick Khoza',
     album: 'Chapita',
     group: 'Africa',
@@ -295,6 +324,7 @@ export const albums: AlbumInfo[] = [
   // MALI
   {
     id: 'ML',
+    name: 'Mali',
     artist: 'AfroCubism',
     album: 'AfroCubism',
     group: 'Africa',
@@ -305,6 +335,7 @@ export const albums: AlbumInfo[] = [
   // MAURITANIA
   {
     id: 'MR',
+    name: 'Mauritania',
     artist: 'Noura Mint Seymali',
     album: 'Tzenni',
     group: 'Africa',
@@ -315,6 +346,7 @@ export const albums: AlbumInfo[] = [
   // MAURITIUS
   {
     id: 'MU',
+    name: 'Mauritius',
     artist: 'Kaya',
     album: 'Zistwar Revoltan',
     group: 'Africa',
@@ -325,6 +357,7 @@ export const albums: AlbumInfo[] = [
   // MOROCCO
   {
     id: 'MA',
+    name: 'Morocco',
     artist: 'Kasbah Rockers',
     album: 'Kasbah Rockers with Bill Laswell',
     group: 'Africa',
@@ -335,6 +368,7 @@ export const albums: AlbumInfo[] = [
   // MOZAMBIQUE
   {
     id: 'MZ',
+    name: 'Mozambique',
     artist: '340ml',
     album: 'Sorry For The Delay',
     group: 'Africa',
@@ -345,6 +379,7 @@ export const albums: AlbumInfo[] = [
   // NAMIBIA
   {
     id: 'NA',
+    name: 'Namibia',
     artist: 'Shishani & The Namibian Tales',
     album: 'Itaala',
     group: 'Africa',
@@ -355,6 +390,7 @@ export const albums: AlbumInfo[] = [
   // NIGER
   {
     id: 'NE',
+    name: 'Niger',
     artist: 'Mdou Moctar',
     album: 'Afrique Victim',
     group: 'Africa',
@@ -365,6 +401,7 @@ export const albums: AlbumInfo[] = [
   // NIGERIA
   {
     id: 'NG',
+    name: 'Nigeria',
     artist: 'Fela Ransome-Kuti & The Africa 70',
     album: 'Confusion',
     group: 'Africa',
@@ -375,6 +412,7 @@ export const albums: AlbumInfo[] = [
   // RWANDA
   {
     id: 'RW',
+    name: 'Rwanda',
     artist: 'The Good Ones',
     album: 'Rwanda, You Should Be Loved',
     group: 'Africa',
@@ -385,6 +423,7 @@ export const albums: AlbumInfo[] = [
   // SENEGAL
   {
     id: 'SN',
+    name: 'Senegal',
     artist: 'Youssou N\'Dour',
     album: 'Set',
     group: 'Africa',
@@ -395,6 +434,7 @@ export const albums: AlbumInfo[] = [
   // SIERRA LEONE
   {
     id: 'SL',
+    name: 'Sierra Leone',
     artist: 'Afro National',
     album: 'African Experimentals (1972-1979)',
     group: 'Africa',
@@ -405,6 +445,7 @@ export const albums: AlbumInfo[] = [
   // SOMALIA
   {
     id: 'SO',
+    name: 'Somalia',
     artist: 'Dur-Dur Band',
     album: 'Volume 5',
     group: 'Africa',
@@ -415,6 +456,7 @@ export const albums: AlbumInfo[] = [
   // SOUTH AFRICA
   {
     id: 'ZA',
+    name: 'South Africa',
     artist: 'Felix Laband',
     album: 'Dark Days Exit',
     group: 'Africa',
@@ -425,6 +467,7 @@ export const albums: AlbumInfo[] = [
   // SUDAN
   {
     id: 'SD',
+    name: 'Sudan',
     artist: 'Al Agarib',
     album: 'Jazz',
     group: 'Africa',
@@ -435,6 +478,7 @@ export const albums: AlbumInfo[] = [
   // TOGO
   {
     id: 'TG',
+    name: 'Togo',
     artist: 'Akofa Akoussah',
     album: 'Akofa Akoussah',
     group: 'Africa',
@@ -445,6 +489,7 @@ export const albums: AlbumInfo[] = [
   // TANZANIA
   {
     id: 'TZ',
+    name: 'Tanzania',
     artist: 'Siti Muharam',
     album: 'Siti of Unguja (Romance Revolution on Zanzibar)',
     group: 'Africa',
@@ -455,6 +500,7 @@ export const albums: AlbumInfo[] = [
   // TUNISIA
   {
     id: 'TN',
+    name: 'Tunisia',
     artist: 'Corinne Allal',
     album: 'Antartica',
     group: 'Africa',
@@ -465,6 +511,7 @@ export const albums: AlbumInfo[] = [
   // UGANDA
   {
     id: 'UG',
+    name: 'Uganda',
     artist: 'Ecko Bazz',
     album: 'Mmaso',
     group: 'Africa',
@@ -475,6 +522,7 @@ export const albums: AlbumInfo[] = [
   // WESTERN SAHARA
   {
     id: 'EH',
+    name: 'Western Sahara',
     artist: 'Group Doueh',
     album: 'Zayna Jumma',
     group: 'Africa',
@@ -485,6 +533,7 @@ export const albums: AlbumInfo[] = [
   // ZAMBIA
   {
     id: 'ZM',
+    name: 'Zambia',
     artist: 'Musi-O-Tunya',
     album: 'Give Love To Your Children',
     group: 'Africa',
@@ -495,6 +544,7 @@ export const albums: AlbumInfo[] = [
   // ZIMBABWE
   {
     id: 'ZW',
+    name: 'Zimbabwe',
     artist: 'Dumisani Maraire',
     album: 'The African Mbira: Music of the Shona People of Rhodesia',
     group: 'Africa',
@@ -503,11 +553,12 @@ export const albums: AlbumInfo[] = [
     url: 'https://rateyourmusic.com/release/album/dumisani-maraire/the-african-mbira-music-of-the-shona-people-of-rhodesia/'
   },
   //#endregion AFRICA
-
+  
   //#region ASIA
   // AFGHANISTAN
   {
     id: 'AF',
+    name: 'Afghanistan',
     artist: 'Almach',
     album: 'Battle Of Tours',
     group: 'Asia',
@@ -518,6 +569,7 @@ export const albums: AlbumInfo[] = [
   // BANGLADESH
   {
     id: 'BD',
+    name: 'Bangladesh',
     artist: 'Ali Akbar Khan',
     album: 'Morning & Evening Ragas',
     group: 'Asia',
@@ -528,6 +580,7 @@ export const albums: AlbumInfo[] = [
   // BHUTAN
   {
     id: 'BT',
+    name: 'Bhutan',
     artist: 'Sonam Dorji',
     album: 'Music From the Mountains of Bhutan',
     group: 'Asia',
@@ -538,6 +591,7 @@ export const albums: AlbumInfo[] = [
   // CAMBODIA
   {
     id: 'KH',
+    name: 'Cambodia',
     artist: 'Dengue Fever',
     album: 'Escape from Dragon House',
     group: 'Asia',
@@ -548,6 +602,7 @@ export const albums: AlbumInfo[] = [
   // CHINA
   {
     id: 'CN',
+    name: 'China',
     artist: 'Enmity',
     album: 'Wuyuan',
     group: 'Asia',
@@ -558,6 +613,7 @@ export const albums: AlbumInfo[] = [
   // GEORGIA
   {
     id: 'GE',
+    name: 'Georgia',
     artist: 'Sinatlis Tselitsadi',
     album: 'Gza Tsisken',
     group: 'Asia',
@@ -568,6 +624,7 @@ export const albums: AlbumInfo[] = [
   // INDIA
   {
     id: 'IN',
+    name: 'India',
     artist: 'Rakesh Chaurasia',
     album: 'Purity 3',
     group: 'Asia',
@@ -578,6 +635,7 @@ export const albums: AlbumInfo[] = [
   // INDONESIA
   {
     id: 'ID',
+    name: 'Indonesia',
     artist: 'Harry Roesli',
     album: 'Titik Api',
     group: 'Asia',
@@ -588,6 +646,7 @@ export const albums: AlbumInfo[] = [
   // JAPAN
   {
     id: 'JP',
+    name: 'Japan',
     artist: 'Koto Ensamble Of The Ikuta School',
     album: 'Japanese Koto Orchestra',
     group: 'Asia',
@@ -598,6 +657,7 @@ export const albums: AlbumInfo[] = [
   // KAZAKHSTAN
   {
     id: 'KZ',
+    name: 'Kazakhstan',
     artist: 'Linda',
     album: 'Vorona',
     group: 'Asia',
@@ -608,6 +668,7 @@ export const albums: AlbumInfo[] = [
   // MALAYSIA
   {
     id: 'MY',
+    name: 'Malaysia',
     artist: 'The Strollers',
     album: 'Waiting Is...',
     group: 'Asia',
@@ -618,6 +679,7 @@ export const albums: AlbumInfo[] = [
   // MONGOLIA
   {
     id: 'MN',
+    name: 'Mongolia',
     artist: 'Hurd',
     album: 'Evirleh Argagvi',
     group: 'Asia',
@@ -628,6 +690,7 @@ export const albums: AlbumInfo[] = [
   // MYANMAR
   {
     id: 'MM',
+    name: 'Myanmar',
     artist: 'Kyaw Myo Naing',
     album: 'Pattalar Lat Than Myar',
     group: 'Asia',
@@ -638,6 +701,7 @@ export const albums: AlbumInfo[] = [
   // NORTH KOREA
   {
     id: 'KP',
+    name: 'North Korea',
     artist: 'Akio Suzuki',
     album: '“ m e r i d i a n s c e n e r y “',
     group: 'Asia',
@@ -648,6 +712,7 @@ export const albums: AlbumInfo[] = [
   // PAKISTAN
   {
     id: 'PK',
+    name: 'Pakistan',
     artist: 'Nusrat Fateh Ali Khan',
     album: 'Shahen-Shah',
     group: 'Asia',
@@ -658,6 +723,7 @@ export const albums: AlbumInfo[] = [
   // PHILIPPINES
   {
     id: 'PH',
+    name: 'Philippines',
     artist: 'Nitoy Gonzales and His Manila Rondalla',
     album: 'Tinikling!: Folk Dances of the Philippines',
     group: 'Asia',
@@ -668,6 +734,7 @@ export const albums: AlbumInfo[] = [
   // SOUTH KOREA
   {
     id: 'KR',
+    name: 'South Korea',
     artist: 'Witches',
     album: 'Broomstick',
     group: 'Asia',
@@ -678,6 +745,7 @@ export const albums: AlbumInfo[] = [
   // SRI LANKA
   {
     id: 'LK',
+    name: 'Sri Lanka',
     artist: 'Mustafa Khetty & Morpheus Project',
     album: 'Mozaick',
     group: 'Asia',
@@ -688,6 +756,7 @@ export const albums: AlbumInfo[] = [
   // TAIWAN
   {
     id: 'TW',
+    name: 'Taiwan',
     artist: 'Elephant Gym',
     album: 'Angle',
     group: 'Asia',
@@ -698,6 +767,7 @@ export const albums: AlbumInfo[] = [
   // THAILAND
   {
     id: 'TH',
+    name: 'Thailand',
     artist: 'Thai Elephant Orchestra',
     album: 'Thai Elephant Orchestra',
     group: 'Asia',
@@ -708,6 +778,7 @@ export const albums: AlbumInfo[] = [
   // TURKEY
   {
     id: 'TR',
+    name: 'Turkey',
     artist: 'Erkin Koray',
     album: 'Elektronik Türküler',
     group: 'Asia',
@@ -718,6 +789,7 @@ export const albums: AlbumInfo[] = [
   // TURKMENISTAN
   {
     id: 'TM',
+    name: 'Turkmenistan',
     artist: 'Gunesh',
     album: 'Gunesh',
     group: 'Asia',
@@ -728,6 +800,7 @@ export const albums: AlbumInfo[] = [
   // UZBEKISTAN
   {
     id: 'UZ',
+    name: 'Uzbekistan',
     artist: 'From.uz',
     album: 'Overlook',
     group: 'Asia',
@@ -738,6 +811,7 @@ export const albums: AlbumInfo[] = [
   // VIETNAM
   {
     id: 'VN',
+    name: 'Vietnam',
     artist: 'Trịnh Công Sơn',
     album: 'Như Tiếng Thở Dài',
     group: 'Asia',
@@ -751,6 +825,7 @@ export const albums: AlbumInfo[] = [
   // BAHAMAS
   {
     id: 'BS',
+    name: 'Bahamas',
     artist: 'Exuma',
     album: 'Exuma',
     group: 'Caribbean',
@@ -761,6 +836,7 @@ export const albums: AlbumInfo[] = [
   // CUBA
   {
     id: 'CU',
+    name: 'Cuba',
     artist: 'Buena Vista Social Club',
     album: 'Buena Vista Social Club',
     group: 'Caribbean',
@@ -771,6 +847,7 @@ export const albums: AlbumInfo[] = [
   // DOMINICAN REPUBLIC
   {
     id: 'DO',
+    name: 'Dominican Republic',
     artist: 'Billo\'s Caracas Boys',
     album: 'Comunicando',
     group: 'Caribbean',
@@ -781,6 +858,7 @@ export const albums: AlbumInfo[] = [
   // GRENADA
   {
     id: 'GD',
+    name: 'Grenada',
     artist: 'Mighty Sparrow',
     album: 'Hot And Sweet',
     group: 'Caribbean',
@@ -791,6 +869,7 @@ export const albums: AlbumInfo[] = [
   // HAITI
   {
     id: 'HT',
+    name: 'Haiti',
     artist: 'Jephté Guillaume',
     album: 'Voyage Of Dreams',
     group: 'Caribbean',
@@ -801,6 +880,7 @@ export const albums: AlbumInfo[] = [
   // JAMAICA
   {
     id: 'JM',
+    name: 'Jamaica',
     artist: 'Dadawah',
     album: 'Peace And Love',
     group: 'Caribbean',
@@ -811,6 +891,7 @@ export const albums: AlbumInfo[] = [
   // TRINIDAD AND TOBAGO
   {
     id: 'TT',
+    name: 'Trinidad and Tobago',
     artist: 'The Esso Trinidad Steel Band',
     album: 'The Esso Trinidad Steel Band',
     group: 'Caribbean',
@@ -824,6 +905,7 @@ export const albums: AlbumInfo[] = [
   // BELIZE
   {
     id: 'BZ',
+    name: 'Belize',
     artist: 'The Garifuna Collective',
     group: 'Central America',
     album: 'Umalali',
@@ -834,6 +916,7 @@ export const albums: AlbumInfo[] = [
   // COSTA RICA 
   {
     id: 'CR',
+    name: 'Costa Rica',
     artist: 'Wings Of Destiny',
     group: 'Central America',
     album: 'Kings Of Terror',
@@ -844,17 +927,18 @@ export const albums: AlbumInfo[] = [
   // EL SALVADOR
   //  {
   //   id: 'SV',
+  //   name: 'El Salvador',
   //   artist: 'Wings Of Destiny',
   //   group: 'Central America',
   //   album: 'Kings Of Terror',
   //   year: 2016,
   //   genres: 'Power Metal, Symphonic Metal',
   //   url: 'https://rateyourmusic.com/release/album/wings_of_destiny/kings_of_terror/',
-
   // },
   // GUATEMALA
   {
     id: 'GT',
+    name: 'Guatemala',
     artist: 'Asimov',
     group: 'Central America',
     album: 'Todo Lo Que Buscamos Es Desaparecer',
@@ -865,6 +949,7 @@ export const albums: AlbumInfo[] = [
   // HONDURAS
   {
     id: 'HN',
+    name: 'Honduras',
     artist: 'Guayo Cedeño',
     group: 'Central America',
     album: 'Coco Bar',
@@ -875,6 +960,7 @@ export const albums: AlbumInfo[] = [
   // NICARAGUA
   {
     id: 'NI',
+    name: 'Nicaragua',
     artist: 'Bwana',
     group: 'Central America',
     album: 'Bwana',
@@ -885,6 +971,7 @@ export const albums: AlbumInfo[] = [
   // PANAMA
   {
     id: 'PA',
+    name: 'Panama',
     artist: 'Willie Colón & Rubén Blades',
     group: 'Central America',
     album: 'Siembra',
@@ -898,6 +985,7 @@ export const albums: AlbumInfo[] = [
   // ALBANIA
   {
     id: 'AL',
+    name: 'Albania',
     artist: 'I Tpame I Tvrame',
     album: 'Ikin Vijnë',
     group: 'Europe',
@@ -908,6 +996,7 @@ export const albums: AlbumInfo[] = [
   // ANDORRA
   {
     id: 'AD',
+    name: 'Andorra',
     artist: 'Persefone',
     album: 'Shin-ken',
     group: 'Central America',
@@ -918,6 +1007,7 @@ export const albums: AlbumInfo[] = [
   // ARMENIA
   {
     id: 'AM',
+    name: 'Armenia',
     artist: 'Tigran Hamasyan',
     album: 'Red Hail',
     group: 'Europe',
@@ -928,6 +1018,7 @@ export const albums: AlbumInfo[] = [
   // AUSTRIA
   {
     id: 'AT',
+    name: 'Austria',
     artist: 'Zero Kama',
     album: 'The Secret Eye of L.A.Y.L.A.H.',
     group: 'Europe',
@@ -938,6 +1029,7 @@ export const albums: AlbumInfo[] = [
   // BELARUS
   {
     id: 'BY',
+    name: 'Belarus',
     artist: 'Molchat Doma',
     album: 'Etazhi',
     group: 'Europe',
@@ -948,6 +1040,7 @@ export const albums: AlbumInfo[] = [
   // BELGIUM
   {
     id: 'BE',
+    name: 'Belgium',
     artist: 'Ghinzu',
     album: 'Blow',
     group: 'Europe',
@@ -958,6 +1051,7 @@ export const albums: AlbumInfo[] = [
   // BOSNIA-HERZEGOVINA
   {
     id: 'BA',
+    name: 'Bosnia-Herzegovina',
     artist: 'Goran Bregović',
     album: 'Arizona Dream',
     group: 'Europe',
@@ -968,6 +1062,7 @@ export const albums: AlbumInfo[] = [
   // BULGARIA
   {
     id: 'BG',
+    name: 'Bulgaria',
     artist: 'Борис Гуджунов',
     album: 'Борис Гуджунов',
     group: 'Europe',
@@ -978,6 +1073,7 @@ export const albums: AlbumInfo[] = [
   // CZECHIA
   {
     id: 'CZ',
+    name: 'Czechia',
     artist: 'Flamengo',
     album: 'Kuře v hodinkách',
     group: 'Europe',
@@ -988,6 +1084,7 @@ export const albums: AlbumInfo[] = [
   // CROATIA
   {
     id: 'HR',
+    name: 'Croatia',
     artist: 'KOKTELSI',
     album: 'Rsaaaj !!!',
     group: 'Europe',
@@ -998,6 +1095,7 @@ export const albums: AlbumInfo[] = [
   // CYPRUS
   {
     id: 'CY',
+    name: 'Cyprus',
     artist: 'Arrayan Path',
     album: 'IV: Stigmata',
     group: 'Europe',
@@ -1008,6 +1106,7 @@ export const albums: AlbumInfo[] = [
   // DENMARK
   {
     id: 'DK',
+    name: 'Denmark',
     artist: 'Kongehuset',
     album: '...Klarer Ærterne',
     group: 'Europe',
@@ -1018,6 +1117,7 @@ export const albums: AlbumInfo[] = [
   // ESTONIA
   {
     id: 'EE',
+    name: 'Estonia',
     artist: 'Marju Kuut / Uno Loop',
     album: 'Marju Kuut / Uno Loop',
     group: 'Europe',
@@ -1028,6 +1128,7 @@ export const albums: AlbumInfo[] = [
   // FAROE ISLANDS
   {
     id: 'FO',
+    name: 'Faroe Islands',
     artist: 'Heljareyga',
     album: 'Heljareyga',
     group: 'Europe',
@@ -1038,6 +1139,7 @@ export const albums: AlbumInfo[] = [
   // FINLAND
   {
     id: 'FI',
+    name: 'Finland',
     artist: 'Korpiklaani',
     album: 'Noita',
     group: 'Europe',
@@ -1048,6 +1150,7 @@ export const albums: AlbumInfo[] = [
   // FRANCE
   {
     id: 'FR',
+    name: 'France',
     artist: 'Eliane Radigue',
     album: 'Trilogie De La Mort',
     group: 'Europe',
@@ -1058,6 +1161,7 @@ export const albums: AlbumInfo[] = [
   // GERMANY
   {
     id: 'DE',
+    name: 'Germany',
     artist: 'Haggard',
     album: 'Eppur Si Muove',
     group: 'Europe',
@@ -1068,6 +1172,7 @@ export const albums: AlbumInfo[] = [
   // GREECE
   {
     id: 'GR',
+    name: 'Greece',
     artist: 'Rotting Christ',
     album: 'Triarchy Of The Lost Lovers',
     group: 'Europe',
@@ -1078,6 +1183,7 @@ export const albums: AlbumInfo[] = [
   // HUNGARY
   {
     id: 'HU',
+    name: 'Hungary',
     artist: 'Tamás Kátai',
     album: 'Erika Szobája',
     group: 'Europe',
@@ -1088,6 +1194,7 @@ export const albums: AlbumInfo[] = [
   // ICELAND
   {
     id: 'IS',
+    name: 'Iceland',
     artist: 'NYIÞ',
     album: 'Til Eru Hræ Sem Hafa Aldrei Verið Menn Og Munu Aldrei Verða Þó Þau Lifi Enn',
     group: 'Europe',
@@ -1098,6 +1205,7 @@ export const albums: AlbumInfo[] = [
   // IRELAND
   {
     id: 'IE',
+    name: 'Ireland',
     artist: 'My Bloody Valentine',
     album: 'Loveless',
     group: 'Europe',
@@ -1108,6 +1216,7 @@ export const albums: AlbumInfo[] = [
   // ITALY
   {
     id: 'IT',
+    name: 'Italy',
     artist: 'Il Bacio Della Medusa',
     album: 'Discesa Agl\'Inferi D\'Un Giovane Amante',
     group: 'Europe',
@@ -1118,6 +1227,7 @@ export const albums: AlbumInfo[] = [
   // KOSOVO
   {
     id: 'XK',
+    name: 'Kosovo',
     artist: 'Popečitelji',
     album: 'Ko Radi?',
     group: 'Europe',
@@ -1128,6 +1238,7 @@ export const albums: AlbumInfo[] = [
   // LATVIA
   {
     id: 'LV',
+    name: 'Latvia',
     artist: 'Tautumeitas',
     album: 'Tautumeitas',
     group: 'Europe',
@@ -1138,6 +1249,7 @@ export const albums: AlbumInfo[] = [
   // LITHUANIA
   {
     id: 'LT',
+    name: 'Lithuania',
     artist: 'Gyvata',
     album: 'Su Vėjužiu Kalbėjau',
     group: 'Europe',
@@ -1148,6 +1260,7 @@ export const albums: AlbumInfo[] = [
   // LUXEMBOURG
   {
     id: 'LU',
+    name: 'Luxembourg',
     artist: 'ROME',
     album: 'Flowers From Exile',
     group: 'Europe',
@@ -1158,6 +1271,7 @@ export const albums: AlbumInfo[] = [
   // MACEDONIA
   {
     id: 'MK',
+    name: 'Macedonia',
     artist: 'Aporea',
     album: 'Na Rekakh Vavilonskikh',
     group: 'Europe',
@@ -1168,6 +1282,7 @@ export const albums: AlbumInfo[] = [
   // MALTA
   {
     id: 'MT',
+    name: 'Malta',
     artist: 'JOON',
     album: 'Dream Again',
     group: 'Europe',
@@ -1178,6 +1293,7 @@ export const albums: AlbumInfo[] = [
   // MOLDOVA
   {
     id: 'MD',
+    name: 'Moldova',
     artist: 'Zdob şi Zdub',
     album: 'Tabăra Noastra',
     group: 'Europe',
@@ -1188,6 +1304,7 @@ export const albums: AlbumInfo[] = [
   // MONACO
   {
     id: 'MC',
+    name: 'Monaco',
     artist: 'Hardcore Anal Hydrogen',
     album: 'HyperCut',
     group: 'Europe',
@@ -1198,6 +1315,7 @@ export const albums: AlbumInfo[] = [
   // MONTENEGRO
   {
     id: 'ME',
+    name: 'Montenegro',
     artist: 'Janko Nilovic (as E. Orti)',
     album: 'Soul Impressions',
     group: 'Europe',
@@ -1208,6 +1326,7 @@ export const albums: AlbumInfo[] = [
   // NETHERLANDS
   {
     id: 'NL',
+    name: 'Netherlands',
     artist: 'YĪN YĪN',
     album: 'The Rabbit That Hunts Tigers',
     group: 'Europe',
@@ -1218,6 +1337,7 @@ export const albums: AlbumInfo[] = [
   // NORWAY
   {
     id: 'NO',
+    name: 'Norway',
     artist: 'Wardruna',
     album: 'Runaljod - Gap Var Ginnunga',
     group: 'Europe',
@@ -1228,6 +1348,7 @@ export const albums: AlbumInfo[] = [
   // POLAND
   {
     id: 'PL',
+    name: 'Poland',
     artist: 'Żywiołak',
     album: 'Nowa Ex-Tradycja',
     group: 'Europe',
@@ -1238,6 +1359,7 @@ export const albums: AlbumInfo[] = [
   // PORTUGAL
   {
     id: 'PT',
+    name: 'Portugal',
     artist: 'Fatigado',
     album: 'Sanzala',
     group: 'Europe',
@@ -1248,6 +1370,7 @@ export const albums: AlbumInfo[] = [
   // ROMANIA
   {
     id: 'RO',
+    name: 'Romania',
     artist: 'Sunset In The 12th House',
     album: 'Mozaic',
     group: 'Europe',
@@ -1258,6 +1381,7 @@ export const albums: AlbumInfo[] = [
   // RUSSIA
   {
     id: 'RU',
+    name: 'Russia',
     artist: 'Kauan',
     album: 'Sorni Nai',
     group: 'Europe',
@@ -1268,6 +1392,7 @@ export const albums: AlbumInfo[] = [
   // SAN MARINO
   {
     id: 'SM',
+    name: 'San Marino',
     artist: 'Alessandro Arzilli',
     album: 'Musa',
     group: 'Europe',
@@ -1278,6 +1403,7 @@ export const albums: AlbumInfo[] = [
   // SERBIA
   {
     id: 'RS',
+    name: 'Serbia',
     artist: 'Darkwood Dub',
     album: 'Elektro Pionir',
     group: 'Europe',
@@ -1288,6 +1414,7 @@ export const albums: AlbumInfo[] = [
   // SLOVAKIA
   {
     id: 'SK',
+    name: 'Slovakia',
     artist: 'Komara',
     album: 'Komara',
     group: 'Europe',
@@ -1298,6 +1425,7 @@ export const albums: AlbumInfo[] = [
   // SLOVENIA
   {
     id: 'SI',
+    name: 'Slovenia',
     artist: 'Gramatik',
     album: 'Coffee Shop Selection',
     group: 'Europe',
@@ -1308,6 +1436,7 @@ export const albums: AlbumInfo[] = [
   // SPAIN
   {
     id: 'ES',
+    name: 'Spain',
     artist: 'Ska-P',
     album: '99%',
     group: 'Europe',
@@ -1318,6 +1447,7 @@ export const albums: AlbumInfo[] = [
   // SWEDEN
   {
     id: 'SE',
+    name: 'Sweden',
     artist: 'Detektivbyrån',
     album: 'Wermland',
     group: 'Europe',
@@ -1328,6 +1458,7 @@ export const albums: AlbumInfo[] = [
   // SWITZERLAND
   {
     id: 'CH',
+    name: 'Switzerland',
     artist: 'Eluveitie',
     album: 'Evocation I - The Arcane Dominion',
     group: 'Europe',
@@ -1338,6 +1469,7 @@ export const albums: AlbumInfo[] = [
   // UKRAINE
   {
     id: 'UA',
+    name: 'Ukraine',
     artist: 'DakhaBrakha',
     album: 'Alambari',
     group: 'Europe',
@@ -1348,6 +1480,7 @@ export const albums: AlbumInfo[] = [
   // UNITED KINGDOM
   {
     id: 'GB',
+    name: 'United Kingdom',
     artist: 'Skream',
     album: 'Skream!',
     group: 'Europe',
@@ -1358,6 +1491,7 @@ export const albums: AlbumInfo[] = [
   // VATICAN CITY
   {
     id: 'VA',
+    name: 'Vatican City',
     artist: 'Cappella Musicale Pontificia Sistina',
     album: 'Cantate Domino',
     group: 'Europe',
@@ -1371,6 +1505,7 @@ export const albums: AlbumInfo[] = [
   // ISRAEL
   {
     id: 'IL',
+    name: 'Israel',
     artist: 'Infected Mushroom',
     album: 'Legend Of The Black Shawarma',
     group: 'Middle East',
@@ -1381,6 +1516,7 @@ export const albums: AlbumInfo[] = [
   // IRAN
   {
     id: 'IR',
+    name: 'Iran',
     artist: 'Shahram Shabpareh',
     album: 'Ey Ghashangtar Az Paria',
     group: 'Middle East',
@@ -1391,6 +1527,7 @@ export const albums: AlbumInfo[] = [
   // LEBANON
   {
     id: 'LB',
+    name: 'Lebanon',
     artist: 'Rabih Abou-Khalil',
     album: 'Blue Camel',
     group: 'Middle East',
@@ -1401,6 +1538,7 @@ export const albums: AlbumInfo[] = [
   // OMAN
   {
     id: 'OM',
+    name: 'Oman',
     artist: 'Lamya',
     album: 'Learning From Falling',
     group: 'Middle East',
@@ -1411,6 +1549,7 @@ export const albums: AlbumInfo[] = [
   // SAUDI ARABIA
   {
     id: 'SA',
+    name: 'Saudi Arabia',
     artist: 'Mahmoud Awad',
     album: 'Sheikh To The F.U.T.U.R.E',
     group: 'Middle East',
@@ -1421,6 +1560,7 @@ export const albums: AlbumInfo[] = [
   // YEMEN
   {
     id: 'YE',
+    name: 'Yemen',
     artist: 'Margalit Ankory',
     album: 'Travel With Me My Dove and Listen to Me!: Songs of the Middle East',
     group: 'Middle East',
@@ -1434,6 +1574,7 @@ export const albums: AlbumInfo[] = [
   // BERMUDA
   {
     id: 'BM',
+    name: 'Bermuda',
     artist: 'Alan Silva and his Celestrial Communication Orchestra',
     album: 'Luna Surface',
     group: 'North America',
@@ -1444,6 +1585,7 @@ export const albums: AlbumInfo[] = [
   // CANADA
   {
     id: 'CA',
+    name: 'Canada',
     artist: 'Venetian Snares',
     album: 'Rossz Csillag Alatt Született',
     group: 'North America',
@@ -1454,6 +1596,7 @@ export const albums: AlbumInfo[] = [
   // GREENLAND
   {
     id: 'GL',
+    name: 'Greenland',
     artist: 'Sume',
     album: 'Sumut',
     group: 'North America',
@@ -1464,6 +1607,7 @@ export const albums: AlbumInfo[] = [
   // MEXICO
   {
     id: 'MX',
+    name: 'Mexico',
     artist: 'Santana',
     album: 'Abraxas',
     group: 'North America',
@@ -1474,6 +1618,7 @@ export const albums: AlbumInfo[] = [
   // SAINT PIERRE AND MIQUELON
   {
     id: 'PM',
+    name: 'Saint Pierre and Miquelon',
     artist: 'Dode',
     album: 'Dode',
     group: 'North America',
@@ -1484,6 +1629,7 @@ export const albums: AlbumInfo[] = [
   // USA
   {
     id: 'US',
+    name: 'USA',
     artist: 'Mr. Bungle',
     album: 'Mr. Bungle',
     group: 'North America',
@@ -1497,6 +1643,7 @@ export const albums: AlbumInfo[] = [
   // AUSTRALIA
   {
     id: 'AU',
+    name: 'Australia',
     artist: 'Dead Can Dance',
     album: 'Dionysus',
     group: 'Oceania',
@@ -1507,6 +1654,7 @@ export const albums: AlbumInfo[] = [
   // FIJI
   {
     id: 'FJ',
+    name: 'Fiji',
     artist: 'Mantis',
     album: 'Turn Onto Music',
     group: 'Oceania',
@@ -1517,6 +1665,7 @@ export const albums: AlbumInfo[] = [
   // NEW ZEALAND
   {
     id: 'NZ',
+    name: 'New Zealand',
     artist: 'David Parsons',
     album: 'Shaman',
     group: 'Oceania',
@@ -1527,6 +1676,7 @@ export const albums: AlbumInfo[] = [
   // PAPUA NEW GUINEA
   {
     id: 'PG',
+    name: 'Papua New Guinea',
     artist: '	Papua New Guinea Stringbands with Bob Brozman',
     album: 'Songs Of The Volcano',
     group: 'Oceania',
@@ -1537,6 +1687,7 @@ export const albums: AlbumInfo[] = [
   // SAMOA
   {
     id: 'WS',
+    name: 'Samoa',
     artist: 'The Samoan Surfriders',
     album: 'Let Me Hear You Whisper',
     group: 'Oceania',
@@ -1550,6 +1701,7 @@ export const albums: AlbumInfo[] = [
   // ARGENTINA
   {
     id: 'AR',
+    name: 'Argentina',
     artist: 'Bajofondo',
     album: 'Mar Dulce',
     group: 'South America',
@@ -1560,6 +1712,7 @@ export const albums: AlbumInfo[] = [
   // BOLIVIA
   {
     id: 'BO',
+    name: 'Bolivia',
     artist: 'Gato Diablo',
     album: 'La Importancia De Tener Un Cuerpo',
     group: 'South America',
@@ -1570,6 +1723,7 @@ export const albums: AlbumInfo[] = [
   // BRASIL
   {
     id: 'BR',
+    name: 'Brasil',
     artist: 'Pedro Santos',
     album: 'Krishnanda',
     group: 'South America',
@@ -1580,6 +1734,7 @@ export const albums: AlbumInfo[] = [
   // CHILE
   {
     id: 'CL',
+    name: 'Chile',
     artist: 'Los Jaivas',
     album: 'Los Jaivas',
     group: 'South America',
@@ -1590,6 +1745,7 @@ export const albums: AlbumInfo[] = [
   // COLOMBIA
   {
     id: 'CO',
+    name: 'Colombia',
     artist: 'Quantic & His Combo Bárbaro',
     album: 'Tradition in Transition',
     group: 'South America',
@@ -1600,6 +1756,7 @@ export const albums: AlbumInfo[] = [
   // ECUADOR
   {
     id: 'EC',
+    name: 'Ecuador',
     artist: 'Nicola Cruz',
     album: 'Prender El Alma',
     group: 'South America',
@@ -1610,6 +1767,7 @@ export const albums: AlbumInfo[] = [
   // FALKLAND ISLANDS
   {
     id: 'FK',
+    name: 'Falkland Islands',
     artist: 'Bloodrust',
     album: 'A Legacy Of Vengeance',
     group: 'South America',
@@ -1620,6 +1778,7 @@ export const albums: AlbumInfo[] = [
   // FRENCH GUIANA
   {
     id: 'GF',
+    name: 'French Guiana',
     artist: 'Henri Salvador',
     album: 'Chambre Avec Vue',
     group: 'South America',
@@ -1630,6 +1789,7 @@ export const albums: AlbumInfo[] = [
   // GUYANA
   {
     id: 'GY',
+    name: 'Guyana',
     artist: 'Cameron',
     album: 'Cameron',
     group: 'South America',
@@ -1640,6 +1800,7 @@ export const albums: AlbumInfo[] = [
   // PARAGUAY
   {
     id: 'PY',
+    name: 'Paraguay',
     artist: 'EEEKS',
     album: 'Pet City',
     group: 'South America',
@@ -1650,6 +1811,7 @@ export const albums: AlbumInfo[] = [
   // PERU
   {
     id: 'PE',
+    name: 'Peru',
     artist: 'Yma Súmac',
     album: 'Mambo!',
     group: 'South America',
@@ -1660,6 +1822,7 @@ export const albums: AlbumInfo[] = [
   // SURINAME
   {
     id: 'SR',
+    name: 'Suriname',
     artist: 'Lieve Hugo',
     album: 'King of Kasèko',
     group: 'South America',
@@ -1670,6 +1833,7 @@ export const albums: AlbumInfo[] = [
   // URUGUAY
   {
     id: 'UY',
+    name: 'Uruguay',
     artist: 'Conjunto Casino de Uruguay',
     album: 'Que Golazo',
     group: 'South America',
@@ -1680,6 +1844,7 @@ export const albums: AlbumInfo[] = [
   // VENEZUELA
   {
     id: 'VE',
+    name: 'Venezuela',
     artist: 'Simón Díaz',
     album: 'Sus Grandes Exitos',
     group: 'South America',
@@ -1690,19 +1855,10 @@ export const albums: AlbumInfo[] = [
   //#endregion SOUTH AMERICA
 
   //#region USA
-  // ARIZONA
-  {
-    id: 'US-AZ',
-    artist: 'Michael Stearns',
-    album: 'Encounter: A Journey In The Key Of Space',
-    group: 'USA',
-    year: 1988,
-    genres: 'Space Ambient',
-    url: 'https://rateyourmusic.com/release/album/michael-stearns/encounter-a-journey-in-the-key-of-space/'
-  },
   // ARKANSAS
   {
     id: 'US-AR',
+    name: "Arkansas",
     artist: 'The Body',
     album: 'I Have Fought Against It, But I Can\'t Any Longer',
     group: 'USA',
@@ -1710,9 +1866,21 @@ export const albums: AlbumInfo[] = [
     genres: 'Death Industrial',
     url: 'https://rateyourmusic.com/release/album/the-body/i-have-fought-against-it-but-i-cant-any-longer/'
   },
+  // ARIZONA
+  {
+    id: 'US-AZ',
+    name: "Arizona",
+    artist: 'Michael Stearns',
+    album: 'Encounter: A Journey In The Key Of Space',
+    group: 'USA',
+    year: 1988,
+    genres: 'Space Ambient',
+    url: 'https://rateyourmusic.com/release/album/michael-stearns/encounter-a-journey-in-the-key-of-space/'
+  },
   // CALIFORNIA
   {
     id: 'US-CA',
+    name: "California",
     artist: 'Mr. Bungle',
     album: 'Mr. Bungle',
     group: 'USA',
@@ -1723,6 +1891,7 @@ export const albums: AlbumInfo[] = [
   // COLORADO
   {
     id: 'US-CO',
+    name: "Colorado",
     artist: 'Itchy-O',
     album: 'Burn The Navigator',
     group: 'USA',
@@ -1733,6 +1902,7 @@ export const albums: AlbumInfo[] = [
   // FLORIDA
   {
     id: 'US-FL',
+    name: "Florida",
     artist: 'Crimson Glory',
     album: 'Crimson Glory',
     group: 'USA',
@@ -1743,26 +1913,29 @@ export const albums: AlbumInfo[] = [
   // GEORGIA
   {
     id: 'US-GA',
+    name: "Georgia",
     artist: 'Alan Jackson',
     album: 'Good Time',
     group: 'USA',
     year: 2008,
     genres: 'Contemporary Folk',
     url: 'https://rateyourmusic.com/release/album/alan_jackson/good_time/'
-  },  
+  },
   // IOWA
   {
     id: 'US-IA',
+    name: "Iowa",
     artist: 'Slipknot',
     album: 'Slipknot',
     group: 'USA',
     year: 1999,
     genres: 'Nu Metal',
     url: 'https://rateyourmusic.com/release/album/slipknot/slipknot/'
-  },  
+  },
   // ILLINOIS
   {
     id: 'US-IL',
+    name: "Illinois",
     artist: 'Herbie Hancock',
     album: 'Head Hunters',
     group: 'USA',
@@ -1773,6 +1946,7 @@ export const albums: AlbumInfo[] = [
   // LOUISIANA
   {
     id: 'US-LA',
+    name: "Louisiana",
     artist: 'Neutral Milk Hotel',
     album: 'In The Aeroplane Over The Sea',
     group: 'USA',
@@ -1783,6 +1957,7 @@ export const albums: AlbumInfo[] = [
   // MASSACHUSETTS
   {
     id: 'US-MA',
+    name: "Massachusetts",
     artist: 'Bella\'s Bartok',
     album: 'Change Yer Life',
     group: 'USA',
@@ -1793,6 +1968,7 @@ export const albums: AlbumInfo[] = [
   // MARYLAND
   {
     id: 'US-MD',
+    name: "Maryland",
     artist: 'Polkadot Cadaver',
     album: 'Purgatory Dance Party',
     group: 'USA',
@@ -1803,6 +1979,7 @@ export const albums: AlbumInfo[] = [
   // MICHIGAN
   {
     id: 'US-MI',
+    name: "Michigan",
     artist: 'Power Of Zeus',
     album: 'The Gospel According to Zeus',
     group: 'USA',
@@ -1813,6 +1990,7 @@ export const albums: AlbumInfo[] = [
   // MINNESOTA
   {
     id: 'US-MN',
+    name: "Minnesota",
     artist: 'Prince',
     album: 'N·E·W·S',
     group: 'USA',
@@ -1823,6 +2001,7 @@ export const albums: AlbumInfo[] = [
   // MISSOURI
   {
     id: 'US-MO',
+    name: "Missouri",
     artist: 'Pavlov\'s Dog',
     album: 'Pampered Menial',
     group: 'USA',
@@ -1833,6 +2012,7 @@ export const albums: AlbumInfo[] = [
   // MISSISSIPPI
   {
     id: 'US-MS',
+    name: "Mississippi",
     artist: 'Elvis Presley',
     album: 'ELV1S (Elvis: 30 #1 Hits)',
     group: 'USA',
@@ -1840,9 +2020,76 @@ export const albums: AlbumInfo[] = [
     genres: 'Rock & Roll, Rockabilly',
     url: 'https://rateyourmusic.com/release/comp/elvis-presley/elv1s-30-1-hits/'
   },
+  // NEBRASKA
+  {
+    id: 'US-NE',
+    name: "Nebraska",
+    artist: 'A Ferocious Jungle Cat',
+    album: 'A Ferocious Jungle Cat',
+    group: 'USA',
+    year: 2015,
+    genres: 'Funk Rock',
+    url: 'https://aferociousjunglecat.bandcamp.com/' //todo: add on rym
+  },
+  // NEVADA
+  {
+    id: 'US-NV',
+    name: "Nevada",
+    artist: 'The Crystal Method',
+    album: 'Vegas',
+    group: 'USA',
+    year: 1997,
+    genres: 'Big Beat',
+    url: 'https://rateyourmusic.com/release/album/the-crystal-method/vegas/'
+  },
+  // NEW HAMPSHIRE
+  {
+    id: 'US-NH',
+    name: "New Hampshire",
+    artist: 'Alvin Lucier',
+    album: 'I Am Sitting In A Room',
+    group: 'USA',
+    year: 1981,
+    genres: 'Tape Music, Spoken Word',
+    url: 'https://rateyourmusic.com/release/album/alvin-lucier/i-am-sitting-in-a-room/'
+  },
+  // NEW JERSEY
+  {
+    id: 'US-NJ',
+    name: "New Jersey",
+    artist: 'Alterior',
+    album: 'No Reason To Be Ashamed',
+    group: 'USA',
+    year: 2008,
+    genres: 'IDM, Glitch',
+    url: 'https://rateyourmusic.com/release/album/alterior/no_reason_to_be_ashamed/'
+  },
+  // NEW YORK
+  {
+    id: 'US-NY',
+    name: "New York",
+    artist: 'Mindless Self Indulgence',
+    album: 'If',
+    group: 'USA',
+    year: 2008,
+    genres: 'Industrial Rock, Synth Punk',
+    url: 'https://rateyourmusic.com/release/album/mindless-self-indulgence/if/'
+  },
+  // NORTH CAROLINA
+  {
+    id: 'US-NC',
+    name: "North Carolina",
+    artist: 'George Clinton',
+    album: 'Computer Games',
+    group: 'USA',
+    year: 1982,
+    genres: 'Synth Funk',
+    url: 'https://rateyourmusic.com/release/album/george-clinton/computer-games/'
+  },
   // OHIO
   {
     id: 'US-OH',
+    name: "Ohio",
     artist: 'The Sacred Mushroom',
     album: 'The Sacred Mushroom',
     group: 'USA',
@@ -1850,9 +2097,43 @@ export const albums: AlbumInfo[] = [
     genres: 'Blues Rock, Psychedelic Rock',
     url: 'https://rateyourmusic.com/release/album/the-sacred-mushroom/the-sacred-mushroom/'
   },
+  // PENNSYLVANIA
+  {
+    id: 'US-PA',
+    name: "Pennsylvania",
+    artist: 'Kabayun And Friends',
+    album: 'Noctis Labyrinthus',
+    group: 'USA',
+    year: 2018,
+    genres: 'Darkpsy',
+    url: 'https://rateyourmusic.com/release/album/kabayun-and-friends/noctis-labyrinthus/'
+  },
+  // TENNESSEE
+  {
+    id: 'US-TN',
+    name: "Tennessee",
+    artist: 'Hammock',
+    album: 'Columbus',
+    group: 'USA',
+    year: 2017,
+    genres: 'Film Score, Ambient',
+    url: 'https://rateyourmusic.com/release/album/hammock/columbus/'
+  },
+  // TEXAS
+  {
+    id: 'US-TX',
+    name: "Texas",
+    artist: 'Snarky Puppy',
+    album: 'We Like It Here',
+    group: 'USA',
+    year: 2014,
+    genres: 'Jazz Fusion',
+    url: 'https://rateyourmusic.com/release/album/snarky-puppy/we-like-it-here/'
+  },
   // VIRGINIA
   {
     id: 'US-VA',
+    name: "Virginia",
     artist: 'Car Seat Headrest',
     album: 'Teens Of Denial',
     group: 'USA',
@@ -1863,6 +2144,7 @@ export const albums: AlbumInfo[] = [
   // WASHINGTON
   {
     id: 'US-WA',
+    name: "Washington",
     artist: 'Nirvana',
     album: 'Nevermind',
     group: 'USA',
@@ -1877,6 +2159,7 @@ export const albums: AlbumInfo[] = [
   // ABRUZZO
   // {
   //   id: 'IT-65',
+  //   name: 'Abruzzo (IT)',
   //   artist: 'foo',
   //   album: 'foo',
   //   group: 'Italy',
@@ -1888,6 +2171,7 @@ export const albums: AlbumInfo[] = [
   // BASILICATA
   {
     id: 'IT-77',
+    name: 'Basilicata (IT)',
     artist: 'Hautville',
     album: 'Mater Dolorosa',
     group: 'Italy',
@@ -1899,6 +2183,7 @@ export const albums: AlbumInfo[] = [
   // CALABRIA
   {
     id: 'IT-78',
+    name: 'Calabria (IT)',
     artist: 'Rino Gaetano',
     album: 'Sotto I Cieli Di Rino',
     group: 'Italy',
@@ -1910,6 +2195,7 @@ export const albums: AlbumInfo[] = [
   // CAMPANIA
   {
     id: 'IT-72',
+    name: 'Campania (IT)',
     artist: 'When The Clouds',
     album: 'The Longed For Season',
     group: 'Italy',
@@ -1921,6 +2207,7 @@ export const albums: AlbumInfo[] = [
   // EMILIA-ROMAGNA
   {
     id: 'IT-45',
+    name: 'Emilia-Romagna (IT)',
     artist: 'Dark Lunacy',
     album: 'Devoid',
     group: 'Italy',
@@ -1932,6 +2219,7 @@ export const albums: AlbumInfo[] = [
   // FRIULI-VENEZIA GIULIA
   {
     id: 'IT-36',
+    name: 'Friuli-Venezia Giulia (IT)',
     artist: 'Rhapsody',
     album: 'Symphony Of Enchanted Lands',
     group: 'Italy',
@@ -1943,6 +2231,7 @@ export const albums: AlbumInfo[] = [
   // LAZIO
   {
     id: 'IT-62',
+    name: 'Lazio (IT)',
     artist: 'Metamorfosi',
     album: 'Inferno',
     group: 'Italy',
@@ -1954,6 +2243,7 @@ export const albums: AlbumInfo[] = [
   // LIGURIA
   {
     id: 'IT-42',
+    name: 'Liguria (IT)',
     artist: 'New Trolls',
     album: 'Concerto Grosso Per I New Trolls',
     group: 'Italy',
@@ -1965,6 +2255,7 @@ export const albums: AlbumInfo[] = [
   // LOMBARDIA
   {
     id: 'IT-25',
+    name: 'Lombardia (IT)',
     artist: 'Pholas Dactylus',
     album: 'Concerto Delle Menti',
     group: 'Italy',
@@ -1976,6 +2267,7 @@ export const albums: AlbumInfo[] = [
   // MARCHE
   {
     id: 'IT-57',
+    name: 'Marche (IT)',
     artist: 'Fabri Fibra',
     album: 'Mr. Simpatia',
     group: 'Italy',
@@ -1987,6 +2279,7 @@ export const albums: AlbumInfo[] = [
   // MOLISE
   {
     id: 'IT-67',
+    name: 'Molise (IT)',
     artist: 'Riserva Moac',
     album: 'Babilonia',
     group: 'Italy',
@@ -1998,6 +2291,7 @@ export const albums: AlbumInfo[] = [
   // PIEMONTE
   {
     id: 'IT-21',
+    name: 'Piemonte (IT)',
     artist: 'Uochi Toki',
     album: 'Cuore Amore Errore Disintegrazione',
     group: 'Italy',
@@ -2009,6 +2303,7 @@ export const albums: AlbumInfo[] = [
   // PUGLIA
   {
     id: 'IT-75',
+    name: 'Puglia (IT)',
     artist: 'Caparezza',
     album: '?!',
     group: 'Italy',
@@ -2020,6 +2315,7 @@ export const albums: AlbumInfo[] = [
   // SARDEGNA
   {
     id: 'IT-88',
+    name: 'Sardegna (IT)',
     artist: 'Sa Razza',
     album: 'Wessisla',
     group: 'Italy',
@@ -2031,6 +2327,7 @@ export const albums: AlbumInfo[] = [
   // SICILIA
   {
     id: 'IT-82',
+    name: 'Sicilia (IT)',
     artist: 'Franco Battiato',
     album: 'Sulle Corde Di Aries',
     group: 'Italy',
@@ -2042,6 +2339,7 @@ export const albums: AlbumInfo[] = [
   // TOSCANA
   {
     id: 'IT-52',
+    name: 'Toscana (IT)',
     artist: 'Negrita',
     album: 'L\'Uomo Sogna Di Volare',
     group: 'Italy',
@@ -2053,6 +2351,7 @@ export const albums: AlbumInfo[] = [
   // TRENTINO-ALTO ADIGE
   {
     id: 'IT-32',
+    name: 'Trentino-Alto Adige (IT)',
     artist: 'Pop-X',
     album: 'I Belong To You (Canti Albanesi Di Trento E Bolzano)',
     group: 'Italy',
@@ -2064,6 +2363,7 @@ export const albums: AlbumInfo[] = [
   // UMBRIA
   {
     id: 'IT-55',
+    name: 'Umbria (IT)',
     artist: 'Il Bacio della Medusa',
     album: 'Discesa Agl\'Inferi D\'Un Giovane Amante',
     group: 'Italy',
@@ -2075,6 +2375,7 @@ export const albums: AlbumInfo[] = [
   // VALLE D'AOSTA
   // {
   //   id: 'IT-23',
+  //   name: 'Valle D\'Aosta (IT)',
   //   artist: 'foo',
   //   album: 'foo',
   //   group: 'Italy',
@@ -2086,6 +2387,7 @@ export const albums: AlbumInfo[] = [
   // VENETO
   {
     id: 'IT-34',
+    name: 'Veneto (IT)',
     artist: 'Teatro Satanico',
     album: 'Chidakasha',
     group: 'Italy',
