@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 
 // Importa l'interfaccia AlbumInfo e la lista albums
@@ -15,7 +16,8 @@ import { AlbumInfo, albums } from 'src/data/albums.data';
 export class AlbumTableComponent implements OnInit {
   displayedColumns: string[] = ['country', 'artist', 'album', 'group', 'year', 'genres'];
 
-  dataSource: MatTableDataSource<AlbumInfo>;
+  dataSource: MatTableDataSource<AlbumInfo>; 
+  filterControl = new FormControl('');
 
   // MatSort / MatPaginator
   @ViewChild(MatSort) sort!: MatSort;
@@ -44,10 +46,9 @@ export class AlbumTableComponent implements OnInit {
 
   /**
    * Apply filter
-   * @param  {Event} event
    */
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
+  applyFilter() {
+    const filterValue = this.filterControl.value!;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {

@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { AlbumTableComponent } from 'src/components/album-table/album-table.component';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatSortModule,
     MatInputModule,
+    ReactiveFormsModule,
     MatFormFieldModule
   ],
   providers: [HttpClientModule],

@@ -1,5 +1,6 @@
 .mat-elevation-z8 {
   margin: 20px;
+  color: white;;
 }
 
 table {
@@ -8,7 +9,8 @@ table {
 
 .mat-mdc-form-field {
   font-size: 14px;
-  width: 100%;
+  width: 300px;
+  margin: 0 auto;
 }
 
 td, th {
@@ -19,6 +21,12 @@ tr:hover {
   cursor: pointer;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/// Widths
 .mat-column-country {
   width: 4%;
 }
@@ -33,9 +41,4 @@ tr:hover {
 
 .mat-column-genres {
   width: 30%;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
 }

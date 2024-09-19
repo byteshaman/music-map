@@ -1,9 +1,13 @@
 <div class="mat-elevation-z8">
-  <!-- Filter -->
-  <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" #input>
-  </mat-form-field>
+  <div>
+    <!-- Filter -->
+    <mat-form-field>
+      <mat-label> {{ filterControl.value ? (dataSource.filteredData.length + ' albums found') : 'Filter' }}</mat-label>
+      <input matInput [formControl]="filterControl" (keyup)="applyFilter()">
+    </mat-form-field>
+
+    <h4 style="display: inline; margin-left: 10px;">Click on the row (table)/country (map) to go to the album page</h4>
+  </div>
 
   <table mat-table [dataSource]="dataSource" matSort>
     <!-- Country -->
@@ -44,11 +48,6 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="openURL(row.url)"></tr>
-
-    <!-- No results -->
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-    </tr>
   </table>
 
   <!-- Paginator -->
