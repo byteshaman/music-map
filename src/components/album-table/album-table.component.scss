@@ -1,20 +1,36 @@
 .mat-elevation-z8 {
   margin: 20px;
-  color: white;;
+  color: #fff;
 }
 
-table {
-  width: 100%;
+.table-container {
+  max-height: 500px;
+  overflow: auto;
+
+  table {
+    width: 100%;
+
+    tr {
+      height: 23px;
+    }
+  }
+
+  .mdc-data-table__cell {
+    padding: 2px 5px;
+  }
 }
 
-.mat-mdc-form-field {
-  font-size: 14px;
-  width: 300px;
-  margin: 0 auto;
-}
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 
-td, th {
-  width: 25%;
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 300px;
+    min-width: 175px;
+  }
 }
 
 tr:hover {
@@ -27,18 +43,29 @@ a {
 }
 
 /// Widths
-.mat-column-country {
-  width: 4%;
+.mat-column-album,
+.mat-column-artist,
+.mat-column-genres {
+  width: 25%;
 }
 
 .mat-column-year {
-  width: 3%;
+  width: 1%;
 }
 
-.mat-column-group {
-  width: 3%;
+.mat-column-country, .mat-column-group {
+  width: 10%;
 }
 
-.mat-column-genres {
-  width: 30%;
+.mat-column-album,
+.mat-column-artist,
+.mat-column-genres,
+.mat-column-year,
+.mat-column-group,
+.mat-column-country {
+  border-right: 1px solid #595959;
+}
+
+mat-paginator {
+  border-top: 1px solid #595959;
 }

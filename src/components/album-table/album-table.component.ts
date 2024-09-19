@@ -21,7 +21,6 @@ export class AlbumTableComponent implements OnInit {
 
   // MatSort / MatPaginator
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor() {
     this.dataSource = new MatTableDataSource(albums);
@@ -30,7 +29,8 @@ export class AlbumTableComponent implements OnInit {
   ngOnInit() {
     // Add columns to filter predicate 
     this.dataSource.filterPredicate = (data: AlbumInfo, filter: string) => {
-      const dataStr = Object.keys(data).reduce((currentTerm: string, key: string) => {
+
+      const dataStr = Object.keys(data).filter(k => !['url','id'].includes(k)).reduce((currentTerm: string, key: string) => {
         return currentTerm + (data as { [key: string]: any })[key] + '◬';
       }, '').toLowerCase();
       const transformedFilter = filter.trim().toLowerCase();
@@ -39,9 +39,7 @@ export class AlbumTableComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // Collega sort e paginator al dataSource dopo che la view è stata inizializzata
     this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
   }
 
   /**

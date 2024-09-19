@@ -27,7 +27,7 @@ export class AppComponent {
   mapConfig!: am5map.IMapChartSettings
   colors: any = {};
 
-  minZoom: number = 1;
+  minZoom: number = 0.98;
   maxZoom: number = 32;
   showExtraRegions: boolean = false;
 
@@ -151,6 +151,7 @@ export class AppComponent {
       zoomControl: am5map.ZoomControl.new(this.root, {}), // Add zoom control
       minZoomLevel: this.minZoom,
       maxZoomLevel: this.maxZoom,
+      zoomLevel: this.minZoom,
 
       // initial position
       rotationX: -10, // longitude
