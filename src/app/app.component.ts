@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as am5 from "@amcharts/amcharts5";
 import * as am5map from "@amcharts/amcharts5/map";
-import am5geodata_worldHigh from "@amcharts/amcharts5-geodata/worldHigh";
-import am5geodata_usaHigh from "@amcharts/amcharts5-geodata/usaHigh";
-import am5geodata_italyHigh from "@amcharts/amcharts5-geodata/italyHigh";
+import am5geodata_worldHigh from "@amcharts/amcharts5-geodata/worldLow";
+import am5geodata_usaHigh from "@amcharts/amcharts5-geodata/usaLow";
+import am5geodata_italyHigh from "@amcharts/amcharts5-geodata/italyLow";
 
 import { AlbumInfo, albums } from 'src/data/albums.data';
 import { firstValueFrom } from 'rxjs';
