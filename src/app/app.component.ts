@@ -8,12 +8,16 @@ import am5geodata_italyHigh from "@amcharts/amcharts5-geodata/italyLow";
 
 import { AlbumInfo, albums } from 'src/data/albums.data';
 import { firstValueFrom } from 'rxjs';
+import { MatButton } from '@angular/material/button';
+import { AlbumTableComponent } from '../components/album-table/album-table.component';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [MatButton, AlbumTableComponent]
 })
 
 export class AppComponent {

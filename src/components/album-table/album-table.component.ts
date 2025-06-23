@@ -1,17 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
-import { FormControl } from '@angular/forms';
+import { MatTableDataSource, MatTable, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow } from '@angular/material/table';
+import { MatSort, MatSortHeader } from '@angular/material/sort';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 
 // Importa l'interfaccia AlbumInfo e la lista albums
 import { AlbumInfo, albums } from 'src/data/albums.data';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
 
 
 @Component({
-  selector: 'app-album-table',
-  templateUrl: './album-table.component.html',
-  styleUrls: ['./album-table.component.scss']
+    selector: 'app-album-table',
+    templateUrl: './album-table.component.html',
+    styleUrls: ['./album-table.component.scss'],
+    standalone: true,
+    imports: [MatFormField, MatLabel, MatInput, ReactiveFormsModule, MatTable, MatSort, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatSortHeader, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow]
 })
 export class AlbumTableComponent implements OnInit {
   displayedColumns: string[] = ['country', 'artist', 'album', 'group', 'year', 'genres'];
