@@ -14,7 +14,6 @@ import { MatInput } from '@angular/material/input';
     selector: 'app-album-table',
     templateUrl: './album-table.component.html',
     styleUrls: ['./album-table.component.scss'],
-    standalone: true,
     imports: [MatFormField, MatLabel, MatInput, ReactiveFormsModule, MatTable, MatSort, MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatSortHeader, MatCellDef, MatCell, MatHeaderRowDef, MatHeaderRow, MatRowDef, MatRow]
 })
 export class AlbumTableComponent implements OnInit {

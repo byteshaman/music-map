@@ -16,7 +16,6 @@ import { AlbumTableComponent } from '../components/album-table/album-table.compo
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: true,
     imports: [MatButton, AlbumTableComponent]
 })
 
