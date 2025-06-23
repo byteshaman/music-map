@@ -26,6 +26,7 @@ export class AppComponent {
   allSeries: am5map.MapPolygonSeries[] = [];
   mapConfig!: am5map.IMapChartSettings
   colors: any = {};
+  mapProjection: 'ortographic' | 'rectangular' = 'ortographic'
 
   minZoom: number = 0.98;
   maxZoom: number = 32;
@@ -40,6 +41,14 @@ export class AppComponent {
     if (savedState !== null) {
       this.showExtraRegions = JSON.parse(savedState);
     } 
+    
+    // Load mapProjection state from localStorage
+    const mapProjection = localStorage.getItem('mapProjection');
+    if (mapProjection === null) {
+      localStorage.setItem('mapProjection', JSON.stringify(this.mapProjection))
+    } else {
+      this.mapProjection = JSON.parse(mapProjection);
+    }
   }
 
   async ngOnInit() {
@@ -135,6 +144,24 @@ export class AppComponent {
     //! hover-color set in setSeriesConfig
   }
 
+  /**
+   * Change map ortographic/rectangular projection
+   * @returns void
+   */
+  changeMapProjection(): void {
+    // ortographic -> rectangular
+    if (this.mapProjection === 'ortographic') {
+      this.mapConfig.projection = this.chart.set("projection", am5map.geoNaturalEarth1());
+      this.mapProjection = 'rectangular';
+      this.mapConfig.panY = "translateY";
+    } else { // rectangular -> ortographic
+      this.mapConfig.projection = this.chart.set("projection", am5map.geoOrthographic());
+      this.mapProjection = 'ortographic';
+      this.mapConfig.panY = "rotateY";
+    }
+
+    localStorage.setItem('mapProjection', JSON.stringify(this.mapProjection));
+  }
 
   /**
    * MARK: map-cfg
@@ -143,9 +170,11 @@ export class AppComponent {
    */
   setMapConfig(): void {
     this.mapConfig = {
-      projection: am5map.geoOrthographic(), // Globe projection (default is am5map.geoMercator())
+      projection: this.mapProjection === 'ortographic' ? am5map.geoOrthographic() : am5map.geoNaturalEarth1(), // Globe projection
+
       panX: "rotateX",
-      panY: "rotateY",
+      panY: this.mapProjection === 'ortographic' ?  "rotateY" : "translateY", // Disable vertical pan
+
 
       /// zoom settings
       zoomControl: am5map.ZoomControl.new(this.root, {}), // Add zoom control
@@ -155,7 +184,7 @@ export class AppComponent {
 
       // initial position
       rotationX: -10, // longitude
-      rotationY: -40, // latitude
+      // rotationY: -40, // latitude
     }
   }
 

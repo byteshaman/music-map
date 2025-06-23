@@ -1,6 +1,9 @@
 <div id="map-container">
   <div id="map"></div>
-  <button mat-raised-button color="primary"(click)="toggleSubstatesView()">{{ (showExtraRegions ? 'Hide' : 'Show') +' Extra Regions' }}</button>
+  <div class="btn-container">
+    <button mat-raised-button color="primary"(click)="toggleSubstatesView()">{{ (showExtraRegions ? 'Hide' : 'Show') +' Extra Regions' }}</button>
+    <button mat-raised-button color="primary"(click)="changeMapProjection()">Change Projection</button>
+  </div>
 </div>
 
 
