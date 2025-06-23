@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 /// Material
 import { MatIconModule } from '@angular/material/icon';
@@ -20,26 +20,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    AlbumTableComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatIconModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    MatSortModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatSlideToggleModule
-  ],
-  providers: [HttpClientModule],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        AlbumTableComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatButtonModule,
+        MatSortModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatSlideToggleModule], providers: [HttpClientModule, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
