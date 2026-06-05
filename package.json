@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@amcharts/amcharts5": "^5.10.5",
+    "@amcharts/amcharts5": "^5.13.3",
     "@amcharts/amcharts5-geodata": "^5.1.4",
     "@angular/animations": "^19.2.14",
     "@angular/cdk": "^18.2.14",
