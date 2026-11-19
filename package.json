@@ -11,8 +11,8 @@
   },
   "private": true,
   "dependencies": {
-    "@amcharts/amcharts5": "^5.13.3",
-    "@amcharts/amcharts5-geodata": "^5.1.4",
+    "@amcharts/amcharts5": "^5.23.0",
+    "@amcharts/amcharts5-geodata": "^5.2.0",
     "@angular/animations": "^22.3.0",
     "@angular/cdk": "^22.3.0",
     "@angular/common": "^22.3.0",
@@ -32,7 +32,6 @@
     "@angular/cli": "^22.3.0",
     "@angular/compiler-cli": "^22.3.0",
     "@types/jasmine": "~4.3.0",
-    "gh-pages": "^6.1.1",
     "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
