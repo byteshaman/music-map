@@ -11,12 +11,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AppComponent } from './app/app.component';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, MatIconModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatSortModule, MatInputModule, ReactiveFormsModule, MatFormFieldModule, MatSlideToggleModule),
+        provideZoneChangeDetection(),importProvidersFrom(BrowserModule, MatIconModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatSortModule, MatInputModule, ReactiveFormsModule, MatFormFieldModule, MatSlideToggleModule),
         HttpClientModule, provideHttpClient(withInterceptorsFromDi()),
         provideAnimations()
     ]
