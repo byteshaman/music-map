@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng build --configuration production --base-href /music-map/ && npx gh-pages -d dist/music-map",
+    "deploy": "ng build --base-href /music-map/ && npx gh-pages -d dist/music-map/browser",
     "test": "ng test"
   },
   "private": true,
