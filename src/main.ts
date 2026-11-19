@@ -1,4 +1,4 @@
-import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,7 +17,7 @@ import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 bootstrapApplication(AppComponent, {
     providers: [
         provideZoneChangeDetection(),importProvidersFrom(BrowserModule, MatIconModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatSortModule, MatInputModule, ReactiveFormsModule, MatFormFieldModule, MatSlideToggleModule),
-        HttpClientModule, provideHttpClient(withInterceptorsFromDi()),
+        HttpClientModule, provideHttpClient(withXhr(), withInterceptorsFromDi()),
         provideAnimations()
     ]
 }).catch(err => console.error(err));
